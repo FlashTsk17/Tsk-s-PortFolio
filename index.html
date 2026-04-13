@@ -8,258 +8,244 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400&family=Cabinet+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════
-   VARIABLES
+   VARIABLES
 ═══════════════════════════════════════════════════ */
 :root {
-  --bg:      #060608;
-  --surf:    #0e0e12;
-  --surf2:   #13131a;
-  --border:  rgba(255,255,255,.07);
-  --border2: rgba(255,255,255,.12);
-  --accent:  #00f5a0;
-  --accent2: #7b61ff;
-  --accent3: #ff5733;
-  --gold:    #ffc44d;
-  --text:    #e8e8f0;
-  --muted:   rgba(232,232,240,.46);
-  --r:       14px;
-  --glow:    0 0 40px rgba(0,245,160,.15);
+  --bg:      #060608;
+  --surf:    #0e0e12;
+  --surf2:   #13131a;
+  --border:  rgba(255,255,255,.07);
+  --border2: rgba(255,255,255,.12);
+  --accent:  #00f5a0;
+  --accent2: #7b61ff;
+  --accent3: #ff5733;
+  --gold:    #ffc44d;
+  --text:    #e8e8f0;
+  --muted:   rgba(232,232,240,.46);
+  --r:       14px;
+  --glow:    0 0 40px rgba(0,245,160,.15);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:'Cabinet Grotesk',sans-serif;
-  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Cabinet Grotesk',sans-serif;
+  overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit;}
 
 /* ═══════════════════════════════════════════════════
-   CURSOR — desktop mouse uniquement
+   CURSOR — desktop mouse uniquement
 ═══════════════════════════════════════════════════ */
 .cursor{
-  width:12px;height:12px;background:var(--accent);border-radius:50%;
-  position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
-  mix-blend-mode:screen;
+  width:12px;height:12px;background:var(--accent);border-radius:50%;
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+  mix-blend-mode:screen;
 }
 .cursor-ring{
-  width:40px;height:40px;
-  border:1px solid rgba(0,245,160,.5);border-radius:50%;
-  position:fixed;top:0;left:0;pointer-events:none;z-index:9998;
-  transition:width .3s,height .3s;
+  width:40px;height:40px;
+  border:1px solid rgba(0,245,160,.5);border-radius:50%;
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9998;
+  transition:width .3s,height .3s;
 }
 @media(hover:hover){body{cursor:none;}a,button{cursor:none;}}
 @media(hover:none){.cursor,.cursor-ring{display:none!important;}}
 
 /* ═══════════════════════════════════════════════════
-   NOISE + GRID
+   NOISE + GRID
 ═══════════════════════════════════════════════════ */
 body::before{
-  content:'';position:fixed;inset:0;
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
-    linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.013) 1px,transparent 1px);
-  background-size:auto,72px 72px,72px 72px;
-  pointer-events:none;z-index:0;
+  content:'';position:fixed;inset:0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"),
+    linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.013) 1px,transparent 1px);
+  background-size:auto,72px 72px,72px 72px;
+  pointer-events:none;z-index:0;
 }
 
 /* ═══════════════════════════════════════════════════
-   KEYFRAMES
+   KEYFRAMES
 ═══════════════════════════════════════════════════ */
-@keyframes blink  {0%,100%{opacity:1}50%{opacity:.1}}
+@keyframes blink  {0%,100%{opacity:1}50%{opacity:.1}}
 @keyframes fadeUp {from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes floatA {0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes floatB {0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-@keyframes orb1   {0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
-@keyframes orb2   {0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
-@keyframes spin   {to{transform:rotate(360deg)}}
-@keyframes caret  {0%,100%{opacity:1}50%{opacity:0}}
+@keyframes orb1   {0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+@keyframes orb2   {0%,100%{transform:translateY(0)}50%{transform:translateY(20px)}}
+@keyframes spin   {to{transform:rotate(360deg)}}
+@keyframes caret  {0%,100%{opacity:1}50%{opacity:0}}
 
 /* ═══════════════════════════════════════════════════
-   NAV
+   NAV
 ═══════════════════════════════════════════════════ */
 nav{
-  position:fixed;top:0;left:0;right:0;
-  padding:1.3rem 3rem;
-  display:flex;justify-content:space-between;align-items:center;
-  z-index:500;backdrop-filter:blur(22px);
-  border-bottom:1px solid var(--border);
-  background:rgba(6,6,8,.78);
+  position:fixed;top:0;left:0;right:0;
+  padding:1.3rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  z-index:500;backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+  background:rgba(6,6,8,.78);
 }
 .nav-logo{
-  font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
-  letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;
+  letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem;
 }
 .nav-logo .ndot{
-  width:8px;height:8px;background:var(--accent);border-radius:50%;
-  box-shadow:0 0 8px var(--accent);animation:blink 2s ease infinite;
+  width:8px;height:8px;background:var(--accent);border-radius:50%;
+  box-shadow:0 0 8px var(--accent);animation:blink 2s ease infinite;
 }
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
 .nav-links a{
-  color:var(--muted);font-size:.82rem;font-weight:500;
-  letter-spacing:.08em;text-transform:uppercase;
-  transition:color .25s;position:relative;
+  color:var(--muted);font-size:.82rem;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+  transition:color .25s;position:relative;
 }
 .nav-links a::after{
-  content:'';position:absolute;bottom:-3px;left:0;
-  width:0;height:1px;background:var(--accent);transition:width .3s;
+  content:'';position:absolute;bottom:-3px;left:0;
+  width:0;height:1px;background:var(--accent);transition:width .3s;
 }
 .nav-links a:hover{color:var(--text);}
 .nav-links a:hover::after{width:100%;}
 .nav-cv{
-  padding:.5rem 1.3rem;border:1px solid var(--accent);border-radius:100px;
-  color:var(--accent)!important;font-size:.8rem!important;font-weight:600!important;
-  transition:background .25s,color .25s,box-shadow .25s!important;
-  display:flex;align-items:center;gap:.4rem;
+  padding:.5rem 1.3rem;border:1px solid var(--accent);border-radius:100px;
+  color:var(--accent)!important;font-size:.8rem!important;font-weight:600!important;
+  transition:background .25s,color .25s,box-shadow .25s!important;
+  display:flex;align-items:center;gap:.4rem;
 }
 .nav-cv:hover{background:var(--accent);color:var(--bg)!important;box-shadow:0 0 20px rgba(0,245,160,.3);}
 .nav-cv::after{display:none!important;}
 
 /* Hamburger */
 .hamburger{
-  display:none;flex-direction:column;gap:5px;
-  background:none;border:none;padding:.4rem;z-index:510;position:relative;
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;padding:.4rem;z-index:510;position:relative;
 }
 .hamburger span{
-  display:block;width:24px;height:2px;background:var(--text);border-radius:2px;
-  transition:transform .3s,opacity .3s;
+  display:block;width:24px;height:2px;background:var(--text);border-radius:2px;
+  transition:transform .3s,opacity .3s;
 }
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ═══════════════════════════════════════════════════
-   HERO
+   HERO
 ═══════════════════════════════════════════════════ */
 .hero{
-  min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;
-  align-items:center;padding:7rem 3rem 4rem;
-  position:relative;overflow:hidden;gap:3rem;
+  min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;
+  align-items:center;padding:7rem 3rem 4rem;
+  position:relative;overflow:hidden;gap:3rem;
 }
 .orb{position:absolute;border-radius:50%;pointer-events:none;filter:blur(90px);}
 .orb1{
-  width:520px;height:520px;top:-80px;right:-60px;
-  background:radial-gradient(circle,rgba(0,245,160,.1),transparent 65%);
-  animation:orb1 8s ease-in-out infinite;
+  width:520px;height:520px;top:-80px;right:-60px;
+  background:radial-gradient(circle,rgba(0,245,160,.1),transparent 65%);
+  animation:orb1 8s ease-in-out infinite;
 }
 .orb2{
-  width:380px;height:380px;bottom:40px;left:60px;
-  background:radial-gradient(circle,rgba(123,97,255,.09),transparent 65%);
-  animation:orb2 11s ease-in-out infinite;
+  width:380px;height:380px;bottom:40px;left:60px;
+  background:radial-gradient(circle,rgba(123,97,255,.09),transparent 65%);
+  animation:orb2 11s ease-in-out infinite;
 }
 .hero-content{position:relative;z-index:1;}
 
 .hero-badge{
-  display:inline-flex;align-items:center;gap:.6rem;
-  padding:.38rem 1rem;
-  background:rgba(0,245,160,.07);border:1px solid rgba(0,245,160,.2);
-  border-radius:100px;font-family:'DM Mono',monospace;
-  font-size:.72rem;color:var(--accent);margin-bottom:1.8rem;
-  animation:fadeUp .7s ease both;
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.38rem 1rem;
+  background:rgba(0,245,160,.07);border:1px solid rgba(0,245,160,.2);
+  border-radius:100px;font-family:'DM Mono',monospace;
+  font-size:.72rem;color:var(--accent);margin-bottom:1.8rem;
+  animation:fadeUp .7s ease both;
 }
 .badge-dot{
-  width:6px;height:6px;background:var(--accent);border-radius:50%;
-  box-shadow:0 0 6px var(--accent);animation:blink 1.5s ease infinite;
+  width:6px;height:6px;background:var(--accent);border-radius:50%;
+  box-shadow:0 0 6px var(--accent);animation:blink 1.5s ease infinite;
 }
 .hero-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(2.8rem,5.5vw,5.6rem);
-  font-weight:800;line-height:.9;letter-spacing:-.04em;
-  margin-bottom:1.5rem;animation:fadeUp .7s .08s ease both;
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.8rem,5.5vw,5.6rem);
+  font-weight:800;line-height:.9;letter-spacing:-.04em;
+  margin-bottom:1.5rem;animation:fadeUp .7s .08s ease both;
 }
 .ht-name{display:block;color:var(--accent);}
 .ht-out{display:block;-webkit-text-stroke:1px rgba(255,255,255,.22);color:transparent;}
 .ht-plain{display:block;}
 
 .hero-bio{
-  color:var(--muted);font-size:1rem;line-height:1.8;
-  max-width:460px;margin-bottom:.8rem;
-  animation:fadeUp .7s .15s ease both;
+  color:var(--muted);font-size:1rem;line-height:1.8;
+  max-width:460px;margin-bottom:.8rem;
+  animation:fadeUp .7s .15s ease both;
 }
 /* Texte autobiographique mis en valeur */
 .hero-bio strong{color:var(--text);}
 .hero-bio em{color:var(--accent);font-style:normal;}
 
 .hero-loc{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:'DM Mono',monospace;font-size:.74rem;color:var(--muted);
-  margin-bottom:2rem;animation:fadeUp .7s .2s ease both;
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'DM Mono',monospace;font-size:.74rem;color:var(--muted);
+  margin-bottom:2rem;animation:fadeUp .7s .2s ease both;
 }
 .hero-loc b{color:var(--accent);font-weight:400;}
 
 .hero-actions{
-  display:flex;gap:1rem;flex-wrap:wrap;
-  animation:fadeUp .7s .25s ease both;
+  display:flex;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp .7s .25s ease both;
 }
 .btn-primary{
-  padding:.85rem 2rem;background:var(--accent);color:var(--bg);
-  border:none;border-radius:100px;
-  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;font-weight:700;
-  transition:transform .2s,box-shadow .2s;
-  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 2rem;background:var(--accent);color:var(--bg);
+  border:none;border-radius:100px;
+  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;font-weight:700;
+  transition:transform .2s,box-shadow .2s;
+  display:inline-flex;align-items:center;gap:.5rem;
 }
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,245,160,.3);}
 .btn-outline{
-  padding:.85rem 2rem;background:transparent;
-  border:1px solid var(--border2);color:var(--text);border-radius:100px;
-  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;font-weight:500;
-  transition:border-color .2s,background .2s;
-  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 2rem;background:transparent;
+  border:1px solid var(--border2);color:var(--text);border-radius:100px;
+  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;font-weight:500;
+  transition:border-color .2s,background .2s;
+  display:inline-flex;align-items:center;gap:.5rem;
 }
 .btn-outline:hover{border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.04);}
 
-/* Photo + Code window côte à côte */
 .hero-visual{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;gap:1.2rem;
-  align-items:center;animation:fadeUp .7s .3s ease both;
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;gap:1.2rem;
+  align-items:center;animation:fadeUp .7s .3s ease both;
 }
 
-/* Photo card */
-.photo-card{position:relative;width:100%;}
+.photo-card{position:relative;width:50%;}
 .photo-frame{
-  width:100%;height:220px;border-radius:18px;overflow:hidden;
-  border:1px solid var(--border2);background:var(--surf2);
-  box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 1px var(--border);
+  width:100%;height:220px;border-radius:18px;overflow:hidden;
+  border:1px solid var(--border2);background:var(--surf2);
+  box-shadow:0 50px 80px rgba(0,0,0,.6),0 0 0 1px var(--border);
 }
-/*
-  ══ PHOTO — remplace ta photo ══
-  Option A : dans .photo-frame, ajoute background-image:url('photo.jpg');background-size:cover;background-position:top;
-             puis supprime la div .photo-ph
-  Option B : remplace .photo-ph par <img src="photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top" alt="Tsadok Adido">
-*/
-.photo-ph{
-  width:100%;height:100%;
-  background:linear-gradient(145deg,#111119,#0a0a14);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;
-}
+
 .photo-ph-icon{
-  width:64px;height:64px;border-radius:50%;
-  border:2px dashed rgba(0,245,160,.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.8rem;color:rgba(0,245,160,.4);
+  width:64px;height:64px;border-radius:50%;
+  border:2px dashed rgba(0,245,160,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;color:rgba(0,245,160,.4);
 }
 .photo-ph-text{
-  font-family:'DM Mono',monospace;font-size:.65rem;
-  color:rgba(0,245,160,.35);text-align:center;padding:0 1rem;line-height:1.6;
+  font-family:'DM Mono',monospace;font-size:.65rem;
+  color:rgba(0,245,160,.35);text-align:center;padding:0 1rem;line-height:1.6;
 }
-/* Chips */
 .chip{
-  position:absolute;padding:.45rem .85rem;border-radius:9px;
-  font-size:.68rem;font-family:'DM Mono',monospace;
-  border:1px solid;backdrop-filter:blur(10px);white-space:nowrap;
+  position:absolute;padding:.45rem .85rem;border-radius:9px;
+  font-size:.68rem;font-family:'DM Mono',monospace;
+  border:1px solid;backdrop-filter:blur(10px);white-space:nowrap;
 }
 .chip1{top:-12px;right:-14px;background:rgba(0,245,160,.08);border-color:rgba(0,245,160,.25);color:var(--accent);animation:floatA 3s ease-in-out infinite;}
 .chip2{bottom:-12px;left:-14px;background:rgba(123,97,255,.08);border-color:rgba(123,97,255,.25);color:var(--accent2);animation:floatB 4s ease-in-out infinite;}
 
-/* Code window */
 .code-window{
-  background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
-  padding:1.2rem;width:100%;
-  font-family:'DM Mono',monospace;font-size:.75rem;line-height:1.85;
-  box-shadow:0 20px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.04);
+  background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.2rem;width:100%;
+  font-family:'DM Mono',monospace;font-size:.75rem;line-height:1.85;
+  box-shadow:0 20px 50px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.04);
 }
 .wc-row{display:flex;gap:6px;margin-bottom:1rem;}
 .wc{width:11px;height:11px;border-radius:50%;}
@@ -268,71 +254,62 @@ nav{
 .ln{color:rgba(255,255,255,.14);user-select:none;min-width:18px;text-align:right;}
 .kw{color:var(--accent2);}.fn{color:var(--accent);}.str{color:#ffd080;}.cm{color:var(--muted);font-style:italic;}.pu{color:rgba(255,255,255,.45);}
 .caret{display:inline-block;width:2px;height:13px;background:var(--accent);vertical-align:middle;animation:caret 1s step-end infinite;margin-left:2px;}
-/* floating badges on code window */
+
 .fb{
-  position:absolute;padding:.45rem .85rem;border-radius:9px;
-  font-size:.68rem;font-family:'DM Mono',monospace;
-  border:1px solid;backdrop-filter:blur(10px);white-space:nowrap;pointer-events:none;
+  position:absolute;padding:.45rem .85rem;border-radius:9px;
+  font-size:.68rem;font-family:'DM Mono',monospace;
+  border:1px solid;backdrop-filter:blur(10px);white-space:nowrap;pointer-events:none;
 }
 .fb1{top:-10px;left:-10px;background:rgba(255,87,51,.1);border-color:rgba(255,87,51,.3);color:var(--accent3);animation:floatA 3.5s ease-in-out infinite;}
 .fb2{bottom:-10px;right:-10px;background:rgba(0,245,160,.08);border-color:rgba(0,245,160,.25);color:var(--accent);animation:floatB 4s 1s ease-in-out infinite;}
 .code-wrap{position:relative;}
 
-/* ═══════════════════════════════════════════════════
-   STATS BAR
-═══════════════════════════════════════════════════ */
 .stats-bar{
-  padding:1.4rem 3rem;
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  display:flex;justify-content:center;gap:4rem;
-  background:var(--surf);position:relative;z-index:1;
+  padding:1.4rem 3rem;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  display:flex;justify-content:center;gap:4rem;
+  background:var(--surf);position:relative;z-index:1;
 }
 .stat{text-align:center;}
 .stat-num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;letter-spacing:-.03em;}
 .stat-num em{color:var(--accent);font-style:normal;}
 .stat-label{font-size:.74rem;color:var(--muted);margin-top:.2rem;text-transform:uppercase;letter-spacing:.1em;}
 
-/* ═══════════════════════════════════════════════════
-   SECTION HELPERS
-═══════════════════════════════════════════════════ */
 section{padding:6rem 3rem;position:relative;z-index:1;}
 .section-tag{
-  font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);
-  text-transform:uppercase;letter-spacing:.18em;margin-bottom:.9rem;
-  display:flex;align-items:center;gap:.8rem;
+  font-family:'DM Mono',monospace;font-size:.72rem;color:var(--accent);
+  text-transform:uppercase;letter-spacing:.18em;margin-bottom:.9rem;
+  display:flex;align-items:center;gap:.8rem;
 }
 .section-tag::before{content:'';width:28px;height:1px;background:var(--accent);}
 .section-title{
-  font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);
-  font-weight:800;letter-spacing:-.04em;line-height:1.04;margin-bottom:.8rem;
+  font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:800;letter-spacing:-.04em;line-height:1.04;margin-bottom:.8rem;
 }
 .section-sub{color:var(--muted);font-size:.95rem;max-width:520px;line-height:1.8;margin-bottom:3rem;}
 .section-sub strong{color:var(--text);}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* ═══════════════════════════════════════════════════
-   GAUGES
-═══════════════════════════════════════════════════ */
 .skills-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
 .skill-group{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);padding:1.8rem;
-  position:relative;overflow:hidden;
-  transition:border-color .3s;
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.8rem;
+  position:relative;overflow:hidden;
+  transition:border-color .3s;
 }
 .skill-group:hover{border-color:rgba(0,245,160,.2);}
 .skill-group::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,245,160,.05),transparent 65%);
-  opacity:0;transition:opacity .3s;pointer-events:none;
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,245,160,.05),transparent 65%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
 }
 .skill-group:hover::before{opacity:1;}
 .sg-title{
-  font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;
-  margin-bottom:1.5rem;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.1em;
-  display:flex;align-items:center;gap:.6rem;
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;
+  margin-bottom:1.5rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;
+  display:flex;align-items:center;gap:.6rem;
 }
 .gauge-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
 .gauge-item{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
@@ -340,30 +317,27 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .gauge-wrap svg{width:72px;height:72px;transform:rotate(-90deg);}
 .g-track{fill:none;stroke:rgba(255,255,255,.06);stroke-width:5;}
 .g-fill{
-  fill:none;stroke-width:5;stroke-linecap:round;
-  stroke-dasharray:188.5;stroke-dashoffset:188.5;
-  transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
+  fill:none;stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:188.5;stroke-dashoffset:188.5;
+  transition:stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
 }
 .ca{stroke:var(--accent);}
 .ca2{stroke:var(--accent2);}
 .cgold{stroke:var(--gold);}
 .ca3{stroke:var(--accent3);}
 .gauge-val{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;line-height:1;
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;line-height:1;
 }
 .gauge-val small{font-size:.48rem;color:var(--muted);font-family:'DM Mono',monospace;font-weight:400;}
 .gauge-label{font-size:.7rem;text-align:center;color:var(--muted);line-height:1.3;max-width:78px;}
 
-/* ═══════════════════════════════════════════════════
-   SKILLS CARDS (trois piliers)
-═══════════════════════════════════════════════════ */
 .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
 .pillar-card{
-  background:var(--surf);border:1px solid var(--border);
-  border-radius:var(--r);padding:1.8rem;
-  transition:border-color .3s;position:relative;overflow:hidden;
+  background:var(--surf);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.8rem;
+  transition:border-color .3s;position:relative;overflow:hidden;
 }
 .pillar-card:hover{border-color:rgba(0,245,160,.2);}
 .pillar-icon{font-size:1.8rem;margin-bottom:1rem;display:block;}
@@ -371,41 +345,35 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .pillar-desc{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:1rem;}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem;}
 .tag{
-  padding:.22rem .65rem;background:rgba(255,255,255,.05);
-  border:1px solid var(--border);border-radius:100px;
-  font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);
+  padding:.22rem .65rem;background:rgba(255,255,255,.05);
+  border:1px solid var(--border);border-radius:100px;
+  font-family:'DM Mono',monospace;font-size:.68rem;color:var(--muted);
 }
 
-/* ═══════════════════════════════════════════════════
-   LANGUES
-═══════════════════════════════════════════════════ */
 .lang-section{background:var(--surf);}
 .lang-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
 .lang-card{
-  background:var(--bg);border:1px solid var(--border);
-  border-radius:var(--r);padding:1.5rem;
-  display:flex;flex-direction:column;align-items:center;gap:1rem;
-  transition:border-color .3s;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.5rem;
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+  transition:border-color .3s;
 }
 .lang-card:hover{border-color:rgba(123,97,255,.3);}
 .lang-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;}
 .lang-level{font-size:.7rem;color:var(--muted);font-family:'DM Mono',monospace;text-align:center;}
 
-/* ═══════════════════════════════════════════════════
-   TIMELINE EXPÉRIENCE
-═══════════════════════════════════════════════════ */
 .exp-section{background:var(--surf);}
 .timeline{position:relative;padding-left:2rem;max-width:860px;}
 .timeline::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:1px;
-  background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);
+  content:'';position:absolute;left:0;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);
 }
 .tl-item{position:relative;padding:0 0 2.8rem 2rem;}
 .tl-dot{
-  position:absolute;left:-2.45rem;top:.2rem;
-  width:12px;height:12px;border-radius:50%;
-  border:2px solid var(--accent);background:var(--bg);
-  box-shadow:0 0 8px var(--accent);
+  position:absolute;left:-2.45rem;top:.2rem;
+  width:12px;height:12px;border-radius:50%;
+  border:2px solid var(--accent);background:var(--bg);
+  box-shadow:0 0 8px var(--accent);
 }
 .tl-dot.d2{border-color:var(--accent2);box-shadow:0 0 8px var(--accent2);}
 .tl-period{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--accent);margin-bottom:.4rem;letter-spacing:.05em;}
@@ -415,19 +383,16 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .tl-desc{font-size:.88rem;color:var(--muted);line-height:1.75;max-width:620px;}
 .tl-desc strong{color:var(--text);}
 
-/* ═══════════════════════════════════════════════════
-   PROJETS
-═══════════════════════════════════════════════════ */
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .project-card{
-  border:1px solid var(--border);border-radius:var(--r);
-  overflow:hidden;background:var(--surf2);
-  transition:border-color .3s,transform .3s;
+  border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;background:var(--surf2);
+  transition:border-color .3s,transform .3s;
 }
 .project-card:hover{border-color:rgba(0,245,160,.3);transform:translateY(-4px);}
 .project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;}
 .project-thumb{
-  height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
 .project-card.featured .project-thumb{height:auto;min-height:230px;}
 .pt1{background:linear-gradient(135deg,#060d1a,#0a1f3a);}
@@ -436,10 +401,10 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .pt4{background:linear-gradient(135deg,#1a0800,#2a1000);}
 .pt5{background:linear-gradient(135deg,#0d0010,#1a0020);}
 .project-thumb-inner{
-  width:120px;height:84px;border-radius:10px;
-  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);
-  display:flex;align-items:center;justify-content:center;
-  font-size:2.4rem;box-shadow:0 16px 36px rgba(0,0,0,.5);
+  width:120px;height:84px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.4rem;box-shadow:0 16px 36px rgba(0,0,0,.5);
 }
 .project-info{padding:1.5rem;}
 .project-card.featured .project-info{display:flex;flex-direction:column;justify-content:center;padding:2.5rem;}
@@ -451,55 +416,46 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .project-link{font-size:.78rem;color:var(--muted);font-family:'DM Mono',monospace;display:flex;align-items:center;gap:.3rem;transition:color .2s;}
 .project-link:hover{color:var(--accent);}
 
-/* ═══════════════════════════════════════════════════
-   PROCESS
-═══════════════════════════════════════════════════ */
 .process-section{background:var(--surf);}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;counter-reset:step;}
 .process-step{
-  padding:1.8rem;border:1px solid var(--border);border-radius:var(--r);
-  background:var(--bg);position:relative;counter-increment:step;
-  transition:border-color .3s;
+  padding:1.8rem;border:1px solid var(--border);border-radius:var(--r);
+  background:var(--bg);position:relative;counter-increment:step;
+  transition:border-color .3s;
 }
 .process-step:hover{border-color:rgba(0,245,160,.2);}
 .process-step::before{
-  content:'0' counter(step);
-  font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;
-  color:rgba(255,255,255,.04);position:absolute;top:.8rem;right:1rem;line-height:1;
+  content:'0' counter(step);
+  font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;
+  color:rgba(255,255,255,.04);position:absolute;top:.8rem;right:1rem;line-height:1;
 }
 .step-icon{font-size:1.5rem;}
 .process-step h3{font-family:'Syne',sans-serif;font-weight:700;margin:.8rem 0 .5rem;font-size:1rem;}
 .process-step p{font-size:.84rem;color:var(--muted);line-height:1.65;}
 
-/* ═══════════════════════════════════════════════════
-   FORMATION
-═══════════════════════════════════════════════════ */
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 .edu-card{
-  background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
-  padding:1.6rem;position:relative;overflow:hidden;transition:border-color .3s;
+  background:var(--surf);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.6rem;position:relative;overflow:hidden;transition:border-color .3s;
 }
 .edu-card:hover{border-color:rgba(0,245,160,.2);}
 .edu-card::before{
-  content:attr(data-year);position:absolute;right:1rem;top:.8rem;
-  font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;
-  color:rgba(255,255,255,.03);line-height:1;pointer-events:none;
+  content:attr(data-year);position:absolute;right:1rem;top:.8rem;
+  font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;
+  color:rgba(255,255,255,.03);line-height:1;pointer-events:none;
 }
 .edu-icon{font-size:1.4rem;margin-bottom:1rem;}
 .edu-inst{font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.3rem;}
 .edu-major{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:.7rem;}
 .edu-year{font-family:'DM Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.05em;}
 
-/* ═══════════════════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════════════════ */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .contact-info{display:flex;flex-direction:column;gap:1rem;}
 .contact-row{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.2rem;background:var(--surf);
-  border:1px solid var(--border);border-radius:10px;font-size:.88rem;
-  transition:border-color .3s;
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.2rem;background:var(--surf);
+  border:1px solid var(--border);border-radius:10px;font-size:.88rem;
+  transition:border-color .3s;
 }
 .contact-row:hover{border-color:rgba(0,245,160,.25);}
 .ci{font-size:1.1rem;}
@@ -507,9 +463,9 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .cr-val{font-weight:500;word-break:break-all;}
 .socials{display:flex;flex-direction:column;gap:.8rem;margin-top:1rem;}
 .social-link{
-  display:flex;align-items:center;gap:1rem;
-  padding:.9rem 1.2rem;border:1px solid var(--border);border-radius:10px;
-  background:var(--surf);transition:border-color .3s,transform .2s;
+  display:flex;align-items:center;gap:1rem;
+  padding:.9rem 1.2rem;border:1px solid var(--border);border-radius:10px;
+  background:var(--surf);transition:border-color .3s,transform .2s;
 }
 .social-link:hover{border-color:rgba(0,245,160,.3);transform:translateX(4px);}
 .social-icon{font-size:1.1rem;}
@@ -518,15 +474,15 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .social-handle{font-size:.75rem;color:var(--muted);font-family:'DM Mono',monospace;}
 .social-arrow{color:var(--muted);font-size:.8rem;}
 .cv-card{
-  background:linear-gradient(135deg,rgba(0,245,160,.06),rgba(123,97,255,.04));
-  border:1px solid rgba(0,245,160,.2);border-radius:var(--r);
-  padding:2rem;display:flex;flex-direction:column;align-items:center;
-  gap:1rem;text-align:center;margin-top:1.5rem;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(0,245,160,.06),rgba(123,97,255,.04));
+  border:1px solid rgba(0,245,160,.2);border-radius:var(--r);
+  padding:2rem;display:flex;flex-direction:column;align-items:center;
+  gap:1rem;text-align:center;margin-top:1.5rem;position:relative;overflow:hidden;
 }
 .cv-card::before{
-  content:'CV';position:absolute;right:1rem;top:.5rem;
-  font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;
-  color:rgba(0,245,160,.04);line-height:1;pointer-events:none;
+  content:'CV';position:absolute;right:1rem;top:.5rem;
+  font-family:'Syne',sans-serif;font-size:5rem;font-weight:800;
+  color:rgba(0,245,160,.04);line-height:1;pointer-events:none;
 }
 .cv-icon{font-size:2.5rem;}
 .cv-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;}
@@ -535,103 +491,91 @@ section{padding:6rem 3rem;position:relative;z-index:1;}
 .fg{display:flex;flex-direction:column;gap:.35rem;}
 .fg label{font-size:.72rem;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;}
 .fg input,.fg textarea{
-  background:var(--surf);border:1px solid var(--border);border-radius:10px;
-  padding:.85rem 1.1rem;color:var(--text);
-  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;
-  outline:none;transition:border-color .3s;resize:vertical;
+  background:var(--surf);border:1px solid var(--border);border-radius:10px;
+  padding:.85rem 1.1rem;color:var(--text);
+  font-family:'Cabinet Grotesk',sans-serif;font-size:.9rem;
+  outline:none;transition:border-color .3s;resize:vertical;
 }
 .fg input:focus,.fg textarea:focus{border-color:var(--accent);}
 .fg textarea{min-height:110px;}
 
-/* ═══════════════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════════════ */
 footer{
-  padding:1.8rem 3rem;border-top:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:.8rem;color:var(--muted);position:relative;z-index:1;
+  padding:1.8rem 3rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.8rem;color:var(--muted);position:relative;z-index:1;
 }
 footer span{font-family:'DM Mono',monospace;}
 .footer-status{display:flex;align-items:center;gap:.5rem;color:var(--accent);}
 .footer-status .fdot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.5s infinite;}
 
-/* ═══════════════════════════════════════════════════
-   SCROLLBAR
-═══════════════════════════════════════════════════ */
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:rgba(0,245,160,.3);border-radius:2px;}
 
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE — MOBILE ≤768px
-═══════════════════════════════════════════════════ */
 @media(max-width:768px){
-  nav{padding:1rem 1.2rem;}
-  .hamburger{display:flex;}
-  .nav-links{
-    position:fixed;inset:0;
-    background:rgba(6,6,8,.97);backdrop-filter:blur(20px);
-    flex-direction:column;justify-content:center;align-items:center;
-    gap:2rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:490;
-  }
-  .nav-links.open{opacity:1;pointer-events:all;}
-  .nav-links a{font-size:1.3rem;}
-  .nav-cv{padding:.7rem 1.8rem;font-size:1rem!important;}
+  nav{padding:1rem 1.2rem;}
+  .hamburger{display:flex;}
+  .nav-links{
+    position:fixed;inset:0;
+    background:rgba(6,6,8,.97);backdrop-filter:blur(20px);
+    flex-direction:column;justify-content:center;align-items:center;
+    gap:2rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:490;
+  }
+  .nav-links.open{opacity:1;pointer-events:all;}
+  .nav-links a{font-size:1.3rem;}
+  .nav-cv{padding:.7rem 1.8rem;font-size:1rem!important;}
 
-  .hero{grid-template-columns:1fr;padding:5.5rem 1.2rem 3rem;text-align:center;gap:2rem;}
-  .hero-content{display:flex;flex-direction:column;align-items:center;}
-  .hero-bio{text-align:left;max-width:100%;}
-  .hero-loc{justify-content:center;}
-  .hero-actions{justify-content:center;}
-  .orb1,.orb2{display:none;}
+  .hero{grid-template-columns:1fr;padding:5.5rem 1.2rem 3rem;text-align:center;gap:2rem;}
+  .hero-content{display:flex;flex-direction:column;align-items:center;}
+  .hero-bio{text-align:left;max-width:100%;}
+  .hero-loc{justify-content:center;}
+  .hero-actions{justify-content:center;}
+  .orb1,.orb2{display:none;}
 
-  .hero-visual{width:100%;}
-  .photo-frame{height:180px;}
-  .chip{font-size:.6rem;}
-  .chip1{right:-10px;top:-8px;}
-  .chip2{left:-10px;bottom:-8px;}
+  .hero-visual{width:100%;}
+  .photo-frame{height:180px;}
+  .chip{font-size:.6rem;}
+  .chip1{right:-10px;top:-8px;}
+  .chip2{left:-10px;bottom:-8px;}
 
-  .stats-bar{gap:1.2rem;flex-wrap:wrap;padding:1.2rem;}
-  .stat-num{font-size:1.5rem;}
+  .stats-bar{gap:1.2rem;flex-wrap:wrap;padding:1.2rem;}
+  .stat-num{font-size:1.5rem;}
 
-  section{padding:4rem 1.2rem;}
-  .section-sub{max-width:100%;}
+  section{padding:4rem 1.2rem;}
+  .section-sub{max-width:100%;}
 
-  .skills-layout{grid-template-columns:1fr;}
-  .gauge-grid{grid-template-columns:1fr 1fr;}
-  .pillars{grid-template-columns:1fr;}
+  .skills-layout{grid-template-columns:1fr;}
+  .gauge-grid{grid-template-columns:1fr 1fr;}
+  .pillars{grid-template-columns:1fr;}
 
-  .projects-grid{grid-template-columns:1fr;}
-  .project-card.featured{grid-column:auto;display:block;}
-  .project-card.featured .project-thumb{height:180px;}
+  .projects-grid{grid-template-columns:1fr;}
+  .project-card.featured{grid-column:auto;display:block;}
+  .project-card.featured .project-thumb{height:180px;}
 
-  .process-grid{grid-template-columns:1fr 1fr;}
-  .edu-grid{grid-template-columns:1fr;}
-  .lang-row{grid-template-columns:1fr 1fr;}
-  .timeline{padding-left:1.4rem;}
-  .contact-grid{grid-template-columns:1fr;gap:2rem;}
-  footer{flex-direction:column;gap:.8rem;text-align:center;padding:1.5rem 1.2rem;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .edu-grid{grid-template-columns:1fr;}
+  .lang-row{grid-template-columns:1fr 1fr;}
+  .timeline{padding-left:1.4rem;}
+  .contact-grid{grid-template-columns:1fr;gap:2rem;}
+  footer{flex-direction:column;gap:.8rem;text-align:center;padding:1.5rem 1.2rem;}
 }
 
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE — TABLETTE 769–1024px
-═══════════════════════════════════════════════════ */
 @media(min-width:769px) and (max-width:1024px){
-  nav{padding:1.2rem 2rem;}
-  .hero{grid-template-columns:1fr 1fr;padding:7rem 2rem 4rem;gap:2rem;}
-  .hero-title{font-size:clamp(2.4rem,4.5vw,4rem);}
-  section{padding:5rem 2rem;}
-  .stats-bar{gap:2rem;padding:1.2rem 2rem;}
-  .skills-layout{grid-template-columns:1fr 1fr;}
-  .gauge-grid{grid-template-columns:1fr 1fr;}
-  .pillars{grid-template-columns:1fr 1fr;}
-  .projects-grid{grid-template-columns:1fr 1fr;}
-  .project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;}
-  .process-grid{grid-template-columns:1fr 1fr;}
-  .edu-grid{grid-template-columns:1fr 1fr;}
-  .lang-row{grid-template-columns:1fr 1fr;}
-  .contact-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
-  footer{padding:1.5rem 2rem;}
+  nav{padding:1.2rem 2rem;}
+  .hero{grid-template-columns:1fr 1fr;padding:7rem 2rem 4rem;gap:2rem;}
+  .hero-title{font-size:clamp(2.4rem,4.5vw,4rem);}
+  section{padding:5rem 2rem;}
+  .stats-bar{gap:2rem;padding:1.2rem 2rem;}
+  .skills-layout{grid-template-columns:1fr 1fr;}
+  .gauge-grid{grid-template-columns:1fr 1fr;}
+  .pillars{grid-template-columns:1fr 1fr;}
+  .projects-grid{grid-template-columns:1fr 1fr;}
+  .project-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;}
+  .process-grid{grid-template-columns:1fr 1fr;}
+  .edu-grid{grid-template-columns:1fr 1fr;}
+  .lang-row{grid-template-columns:1fr 1fr;}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  footer{padding:1.5rem 2rem;}
 }
 </style>
 </head>
@@ -640,601 +584,585 @@ footer span{font-family:'DM Mono',monospace;}
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ══ NAV ══════════════════════════════════════════ -->
 <nav>
-  <div class="nav-logo"><div class="ndot"></div>Tsadok<span style="color:var(--accent)">.</span>ADIDO</div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#skills"     class="ni">Compétences</a></li>
-    <li><a href="#experience" class="ni">Expérience</a></li>
-    <li><a href="#projects"   class="ni">Projets</a></li>
-    <li><a href="#process"    class="ni">Approche</a></li>
-    <li><a href="#contact"    class="ni">Contact</a></li>
-    <!-- 👇 REMPLACE href="#" par le lien de ton CV PDF (ex: Google Drive) -->
-    <li><a href="#" target="_blank" rel="noopener" class="nav-cv ni">📄 Mon CV</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-logo"><div class="ndot"></div>Tsadok<span style="color:var(--accent)">.</span>ADIDO</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#skills"     class="ni">Compétences</a></li>
+    <li><a href="#experience" class="ni">Expérience</a></li>
+    <li><a href="#projects"   class="ni">Projets</a></li>
+    <li><a href="#process"    class="ni">Approche</a></li>
+    <li><a href="#contact"    class="ni">Contact</a></li>
+    <!-- 👇 REMPLACE href="#" par le lien de ton CV PDF (ex: Google Drive) -->
+    <li><a href="#" target="_blank" rel="noopener" class="nav-cv ni">📄 Mon CV</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ══ HERO ══════════════════════════════════════════ -->
 <section class="hero">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
 
-  <div class="hero-content">
-    <div class="hero-badge"><span class="badge-dot"></span>Disponible pour missions &amp; collaborations</div>
-    <h1 class="hero-title">
-      <span class="ht-name">Tsadok Adido.</span>
-      <span class="ht-out">Code. Design.</span>
-      <span class="ht-plain">Impact.</span>
-    </h1>
-    <p class="hero-bio">
-      Je suis <strong>développeur web, infographe certifié et designer UX/UI</strong>, fondateur de <em>Tsk's Tech Services</em> — un studio tech africain que j'ai bâti de mes mains. 
-      Mon objectif ? <strong>Créer des expériences numériques pensées pour les humains</strong>, alliant logique, esthétique et accessibilité pour un impact réel sur le terrain.
-    </p>
-    <div class="hero-loc">📍&nbsp;<b>Godomey · Calavi · Atlantique · Bénin</b></div>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-primary">Voir mes projets →</a>
-      <a href="#contact"  class="btn-outline">Collaborons ✦</a>
-    </div>
-  </div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>Disponible pour missions &amp; collaborations</div>
+    <h1 class="hero-title">
+      <span class="ht-name">Tsadok Adido.</span>
+      <span class="ht-out">Code. Design.</span>
+      <span class="ht-plain">Impact.</span>
+    </h1>
+    <p class="hero-bio">
+      Je suis <strong>développeur web, infographe certifié et designer UX/UI</strong>, fondateur de <em>Tsk's Tech Services</em> — un studio tech africain que j'ai bâti de mes mains depuis Cotonou, Bénin.
+      Mon objectif ? <strong>Créer des expériences numériques pensées pour les humains</strong>, alliant logique, esthétique et accessibilité pour un impact réel sur le terrain.
+    </p>
+    <div class="hero-loc">📍&nbsp;<b>Godomey · Calavi · Atlantique · Bénin</b></div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Voir mes projets →</a>
+      <a href="#contact"  class="btn-outline">Collaborons ✦</a>
+    </div>
+  </div>
 
-  <div class="hero-visual">
-    <!-- Photo -->
-    <div class="photo-card">
-      <div class="chip chip1">⚡ PDG · Tsk's Tech</div>
-      <div class="chip chip2">🎨 Infographe certifié</div>
-      <div class="photo-frame">
-        <!--
-          PHOTO : remplace ce bloc par :
-          <img src="ta-photo.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top" alt="Tsadok Adido">
-        -->
-        <div class="photo-ph">
-          <div class="photo-ph-icon">👤</div>
-          <div class="photo-ph-text">Ta photo ici<br><span style="color:rgba(0,245,160,.2)">Voir instructions dans le code</span></div>
-        </div>
-      </div>
-    </div>
+  <div class="hero-visual">
+  
+    <div class="photo-card">
+      <div class="chip chip1">⚡ PDG · Tsk's Tech</div>
+      <div class="chip chip2">🎨 Infographe certifié</div>
+      <div class="photo-frame">
+        <img src="photo.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:top" alt="Tsadok Adido">
+        <div class="photo-ph">
+          <div class="photo-ph-icon">👤</div>
+        </div>
+      </div>
+    </div>
 
-    <!-- Code window -->
-    <div class="code-wrap">
-      <div class="fb fb1">✦ UX Designer</div>
-      <div class="fb fb2">🌍 West Africa · Bénin</div>
-      <div class="code-window">
-        <div class="wc-row"><div class="wc r"></div><div class="wc y"></div><div class="wc g"></div></div>
-        <div class="cl"><span class="ln">1</span><span><span class="kw">const</span> <span class="fn">moi</span> <span class="pu">= {</span></span></div>
-        <div class="cl"><span class="ln">2</span><span>&nbsp;&nbsp;<span class="fn">nom</span><span class="pu">:</span> <span class="str">"Tsadok ADIDO"</span><span class="pu">,</span></span></div>
-        <div class="cl"><span class="ln">3</span><span>&nbsp;&nbsp;<span class="fn">stack</span><span class="pu">:</span> <span class="pu">[</span><span class="str">"HTML/CSS"</span><span class="pu">,</span><span class="str">"JS"</span><span class="pu">,</span><span class="str">"React"</span><span class="pu">,</span><span class="str">"Node"</span><span class="pu">],</span></span></div>
-        <div class="cl"><span class="ln">4</span><span>&nbsp;&nbsp;<span class="fn">design</span><span class="pu">:</span> <span class="pu">[</span><span class="str">"PS"</span><span class="pu">,</span><span class="str">"AI"</span><span class="pu">,</span><span class="str">"Figma"</span><span class="pu">,</span><span class="str">"AE"</span><span class="pu">],</span></span></div>
-        <div class="cl"><span class="ln">5</span><span>&nbsp;&nbsp;<span class="fn">mission</span><span class="pu">:</span> <span class="str">"Tech pour tous"</span><span class="pu">,</span></span></div>
-        <div class="cl"><span class="ln">6</span><span>&nbsp;&nbsp;<span class="fn">dispo</span><span class="pu">:</span> <span class="fn">true</span><span class="pu">,</span></span></div>
-        <div class="cl"><span class="ln">7</span><span><span class="pu">};</span></span></div>
-        <div class="cl"><span class="ln">8</span><span><span class="cm">// Construisons quelque chose</span></span></div>
-        <div class="cl"><span class="ln">9</span><span><span class="cm">// d'extraordinaire ensemble</span> <span class="caret"></span></span></div>
-      </div>
-    </div>
-  </div>
+    <div class="code-wrap">
+      <div class="fb fb1">✦ UX Designer</div>
+      <div class="fb fb2">🌍 West Africa · Bénin</div>
+      <div class="code-window">
+        <div class="wc-row"><div class="wc r"></div><div class="wc y"></div><div class="wc g"></div></div>
+        <div class="cl"><span class="ln">1</span><span><span class="kw">const</span> <span class="fn">moi</span> <span class="pu">= {</span></span></div>
+        <div class="cl"><span class="ln">2</span><span>&nbsp;&nbsp;<span class="fn">nom</span><span class="pu">:</span> <span class="str">"Tsadok ADIDO"</span><span class="pu">,</span></span></div>
+        <div class="cl"><span class="ln">3</span><span>&nbsp;&nbsp;<span class="fn">stack</span><span class="pu">:</span> <span class="pu">[</span><span class="str">"HTML/CSS"</span><span class="pu">,</span><span class="str">"JS"</span><span class="pu">,</span><span class="str">"React"</span><span class="pu">,</span><span class="str">"Node"</span><span class="pu">],</span></span></div>
+        <div class="cl"><span class="ln">4</span><span>&nbsp;&nbsp;<span class="fn">design</span><span class="pu">:</span> <span class="pu">[</span><span class="str">"PS"</span><span class="pu">,</span><span class="str">"AI"</span><span class="pu">,</span><span class="str">"Figma"</span><span class="pu">,</span><span class="str">"AE"</span><span class="pu">],</span></span></div>
+        <div class="cl"><span class="ln">5</span><span>&nbsp;&nbsp;<span class="fn">mission</span><span class="pu">:</span> <span class="str">"Tech pour tous"</span><span class="pu">,</span></span></div>
+        <div class="cl"><span class="ln">6</span><span>&nbsp;&nbsp;<span class="fn">dispo</span><span class="pu">:</span> <span class="fn">true</span><span class="pu">,</span></span></div>
+        <div class="cl"><span class="ln">7</span><span><span class="pu">};</span></span></div>
+        <div class="cl"><span class="ln">8</span><span><span class="cm">// Construisons quelque chose</span></span></div>
+        <div class="cl"><span class="ln">9</span><span><span class="cm">// d'extraordinaire ensemble</span> <span class="caret"></span></span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ══ STATS ══════════════════════════════════════════ -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num"><em>7</em>+</div><div class="stat-label">Projets livrés</div></div>
-  <div class="stat"><div class="stat-num"><em>2</em>+</div><div class="stat-label">Années d'exp.</div></div>
-  <div class="stat"><div class="stat-num"><em>4</em>+</div><div class="stat-label">Clients satisfaits</div></div>
-  <div class="stat"><div class="stat-num"><em>∞</em></div><div class="stat-label">Passion</div></div>
+  <div class="stat"><div class="stat-num"><em>7</em>+</div><div class="stat-label">Projets livrés</div></div>
+  <div class="stat"><div class="stat-num"><em>2</em>+</div><div class="stat-label">Années d'exp.</div></div>
+  <div class="stat"><div class="stat-num"><em>4</em>+</div><div class="stat-label">Clients satisfaits</div></div>
+  <div class="stat"><div class="stat-num"><em>∞</em></div><div class="stat-label">Passion</div></div>
 </div>
 
-<!-- ══ COMPÉTENCES ══════════════════════════════════════════ -->
 <section id="skills">
-  <div class="section-tag">Expertise</div>
-  <h2 class="section-title reveal">Ce que je sais<br>vraiment faire</h2>
-  <p class="section-sub reveal">
-    Je ne me contente pas d'un seul domaine. <strong>Je programme, je conçois et je crée</strong> — trois piliers que je maîtrise ensemble pour livrer des produits numériques complets, cohérents et percutants.
-  </p>
+  <div class="section-tag">Expertise</div>
+  <h2 class="section-title reveal">Ce que je sais<br>vraiment faire</h2>
+  <p class="section-sub reveal">
+    Je ne me contente pas d'un seul domaine. <strong>Je programme, je conçois et je crée</strong> — trois piliers que je maîtrise ensemble pour livrer des produits numériques complets, cohérents et percutants.
+  </p>
 
-  <!-- Gauges niveaux -->
-  <div class="skills-layout reveal" id="skillsLayout">
+  
+  <div class="skills-layout reveal" id="skillsLayout">
 
-    <div class="skill-group" id="sg1">
-      <div class="sg-title"><span>⚡</span> Développement Web</div>
-      <div class="gauge-grid">
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent)">7<small>/10</small></div></div>
-          <div class="gauge-label">HTML / CSS</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="6"/></svg><div class="gauge-val" style="color:var(--accent)">6<small>/10</small></div></div>
-          <div class="gauge-label">JavaScript</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="5"/></svg><div class="gauge-val" style="color:var(--accent)">5<small>/10</small></div></div>
-          <div class="gauge-label">React / Next</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="5"/></svg><div class="gauge-val" style="color:var(--accent)">5<small>/10</small></div></div>
-          <div class="gauge-label">Node / MongoDB</div>
-        </div>
-      </div>
-    </div>
+    <div class="skill-group" id="sg1">
+      <div class="sg-title"><span>⚡</span> Développement Web</div>
+      <div class="gauge-grid">
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--accent)">8<small>/10</small></div></div>
+          <div class="gauge-label">HTML / CSS</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="6"/></svg><div class="gauge-val" style="color:var(--accent)">6<small>/10</small></div></div>
+          <div class="gauge-label">JavaScript / Python</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="5"/></svg><div class="gauge-val" style="color:var(--accent)">5<small>/10</small></div></div>
+          <div class="gauge-label">React / Next</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="5"/></svg><div class="gauge-val" style="color:var(--accent)">5<small>/10</small></div></div>
+          <div class="gauge-label">Node / MongoDB</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="skill-group" id="sg2">
-      <div class="sg-title"><span>🎨</span> Design &amp; Infographie</div>
-      <div class="gauge-grid">
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--accent2)">8<small>/10</small></div></div>
-          <div class="gauge-label">Photoshop</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent2)">7<small>/10</small></div></div>
-          <div class="gauge-label">Illustrator</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent2)">7<small>/10</small></div></div>
-          <div class="gauge-label">Figma / UX</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="6"/></svg><div class="gauge-val" style="color:var(--accent2)">6<small>/10</small></div></div>
-          <div class="gauge-label">After Effects</div>
-        </div>
-      </div>
-    </div>
+    <div class="skill-group" id="sg2">
+      <div class="sg-title"><span>🎨</span> Design &amp; Infographie</div>
+      <div class="gauge-grid">
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--accent2)">8<small>/10</small></div></div>
+          <div class="gauge-label">Photoshop</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent2)">7<small>/10</small></div></div>
+          <div class="gauge-label">Illustrator</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent2)">7<small>/10</small></div></div>
+          <div class="gauge-label">Figma / UX</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="6"/></svg><div class="gauge-val" style="color:var(--accent2)">6<small>/10</small></div></div>
+          <div class="gauge-label">After Effects</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="skill-group" id="sg3">
-      <div class="sg-title"><span>◈</span> Management &amp; Soft</div>
-      <div class="gauge-grid">
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--gold)">8<small>/10</small></div></div>
-          <div class="gauge-label">Leadership</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--gold)">7<small>/10</small></div></div>
-          <div class="gauge-label">Gestion projet</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--gold)">7<small>/10</small></div></div>
-          <div class="gauge-label">Marketing</div>
-        </div>
-        <div class="gauge-item">
-          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--gold)">8<small>/10</small></div></div>
-          <div class="gauge-label">Maintenance Info.</div>
-        </div>
-      </div>
-    </div>
+    <div class="skill-group" id="sg3">
+      <div class="sg-title"><span>◈</span> Management &amp; Soft</div>
+      <div class="gauge-grid">
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="9"/></svg><div class="gauge-val" style="color:var(--gold)">9<small>/10</small></div></div>
+          <div class="gauge-label">Leadership</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--gold)">7<small>/10</small></div></div>
+          <div class="gauge-label">Gestion projet</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--gold)">7<small>/10</small></div></div>
+          <div class="gauge-label">Marketing</div>
+        </div>
+        <div class="gauge-item">
+          <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill cgold" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--gold)">8<small>/10</small></div></div>
+          <div class="gauge-label">Maintenance Info.</div>
+        </div>
+      </div>
+    </div>
 
-  </div>
+  </div>
 
-  <!-- Trois piliers -->
-  <div class="pillars reveal">
-    <div class="pillar-card">
-      <span class="pillar-icon">⚡</span>
-      <div class="pillar-name">Développement</div>
-      <div class="pillar-desc">Je construis des sites et applications modernes, des APIs robustes et des interfaces réactives haute performance — du backend au pixel final.</div>
-      <div class="tags">
-        <span class="tag">HTML / CSS</span><span class="tag">JavaScript</span><span class="tag">React / Next.js</span>
-        <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">SQL / MongoDB</span>
-      </div>
-    </div>
-    <div class="pillar-card">
-      <span class="pillar-icon">🎨</span>
-      <div class="pillar-name">Design Graphique</div>
-      <div class="pillar-desc">Identités visuelles, affiches, illustrations et motion design. Je crée des visuels qui marquent les esprits et racontent une histoire.</div>
-      <div class="tags">
-        <span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">After Effects</span><span class="tag">Blender</span>
-      </div>
-    </div>
-    <div class="pillar-card">
-      <span class="pillar-icon">◎</span>
-      <div class="pillar-name">UX / UI Design</div>
-      <div class="pillar-desc">Interfaces centrées utilisateur, design systems scalables et prototypage interactif. Je conçois d'abord pour l'humain, ensuite pour l'écran.</div>
-      <div class="tags">
-        <span class="tag">Figma</span><span class="tag">Prototypage</span><span class="tag">Design System</span><span class="tag">User Research</span>
-      </div>
-    </div>
-  </div>
+  
+  <div class="pillars reveal">
+    <div class="pillar-card">
+      <span class="pillar-icon">⚡</span>
+      <div class="pillar-name">Développement</div>
+      <div class="pillar-desc">Je construis des sites et applications modernes, des APIs robustes et des interfaces réactives haute performance — du backend au pixel final.</div>
+      <div class="tags">
+        <span class="tag">HTML / CSS</span><span class="tag">JavaScript</span><span class="tag">React / Next.js</span>
+        <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">SQL / MongoDB</span>
+      </div>
+    </div>
+    <div class="pillar-card">
+      <span class="pillar-icon">🎨</span>
+      <div class="pillar-name">Design Graphique</div>
+      <div class="pillar-desc">Identités visuelles, affiches, illustrations et motion design. Je crée des visuels qui marquent les esprits et racontent une histoire.</div>
+      <div class="tags">
+        <span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">After Effects</span><span class="tag">Blender</span>
+      </div>
+    </div>
+    <div class="pillar-card">
+      <span class="pillar-icon">◎</span>
+      <div class="pillar-name">UX / UI Design</div>
+      <div class="pillar-desc">Interfaces centrées utilisateur, design systems scalables et prototypage interactif. Je conçois d'abord pour l'humain, ensuite pour l'écran.</div>
+      <div class="tags">
+        <span class="tag">Figma</span><span class="tag">Prototypage</span><span class="tag">Design System</span><span class="tag">User Research</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ══ LANGUES ══════════════════════════════════════════ -->
 <section class="lang-section">
-  <div class="section-tag">Langues</div>
-  <h2 class="section-title reveal">Je communique<br>sans frontières</h2>
-  <p class="section-sub reveal">Le langage est un outil de connexion. Je l'utilise pour créer des ponts entre cultures, équipes et clients.</p>
-  <div class="lang-row reveal" id="langRow">
-    <div class="lang-card">
-      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="9"/></svg><div class="gauge-val" style="color:var(--accent)">9<small>/10</small></div></div>
-      <div class="lang-name">🇫🇷 Français</div><div class="lang-level">Bilingue — langue maternelle</div>
-    </div>
-    <div class="lang-card">
-      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="6"/></svg><div class="gauge-val" style="color:var(--accent)">6<small>/10</small></div></div>
-      <div class="lang-name">🇬🇧 Anglais</div><div class="lang-level">Intermédiaire</div>
-    </div>
-    <div class="lang-card">
-      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="5"/></svg><div class="gauge-val" style="color:var(--accent2)">5<small>/10</small></div></div>
-      <div class="lang-name">🌍 Fon / Ewé</div><div class="lang-level">Langue locale — Bénin / Togo</div>
-    </div>
-    <div class="lang-card">
-      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="4"/></svg><div class="gauge-val" style="color:var(--accent2)">4<small>/10</small></div></div>
-      <div class="lang-name">🇩🇪 Allemand</div><div class="lang-level">Notions de base</div>
-    </div>
-  </div>
+  <div class="section-tag">Langues</div>
+  <h2 class="section-title reveal">Je communique<br>sans frontières</h2>
+  <p class="section-sub reveal">Le langage est un outil de connexion. Je l'utilise pour créer des ponts entre cultures, équipes et clients.</p>
+  <div class="lang-row reveal" id="langRow">
+    <div class="lang-card">
+      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="9"/></svg><div class="gauge-val" style="color:var(--accent)">9<small>/10</small></div></div>
+      <div class="lang-name">🇫🇷 Français</div><div class="lang-level">Bilingue — langue Nationale & officielle</div>
+    </div>
+    <div class="lang-card">
+      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca" cx="36" cy="36" r="30" data-level="7"/></svg><div class="gauge-val" style="color:var(--accent)">7<small>/10</small></div></div>
+      <div class="lang-name">🇬🇧 Anglais</div><div class="lang-level">Intermédiaire (B2)</div>
+    </div>
+    <div class="lang-card">
+      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="8"/></svg><div class="gauge-val" style="color:var(--accent2)">8<small>/10</small></div></div>
+      <div class="lang-name">🌍 Fon / Ewé</div><div class="lang-level">Langue locale — Bénin / Togo</div>
+    </div>
+    <div class="lang-card">
+      <div class="gauge-wrap"><svg viewBox="0 0 72 72"><circle class="g-track" cx="36" cy="36" r="30"/><circle class="g-fill ca2" cx="36" cy="36" r="30" data-level="4"/></svg><div class="gauge-val" style="color:var(--accent2)">4<small>/10</small></div></div>
+      <div class="lang-name">🇩🇪 Allemand</div><div class="lang-level">Notions de base</div>
+    </div>
+  </div>
 </section>
 
-<!-- ══ EXPÉRIENCE ══════════════════════════════════════════ -->
 <section id="experience" class="exp-section">
-  <div class="section-tag">Parcours</div>
-  <h2 class="section-title reveal">Mon chemin<br>jusqu'ici</h2>
-  <p class="section-sub reveal">
-    Chaque expérience m'a forgé. <strong>Je n'ai pas attendu les opportunités — je les ai créées.</strong>
-  </p>
-  <div class="timeline reveal">
+  <div class="section-tag">Parcours</div>
+  <h2 class="section-title reveal">Mon chemin<br>jusqu'ici</h2>
+  <p class="section-sub reveal">
+    Chaque expérience m'a forgé. <strong>Je n'ai pas attendu les opportunités — je les ai créées.</strong>
+  </p>
+  <div class="timeline reveal">
 
-    <div class="tl-item">
-      <div class="tl-dot"></div>
-      <div class="tl-period">Août 2024 — Présent</div>
-      <div class="tl-title">Fondateur &amp; PDG</div>
-      <div class="tl-company">Tsk's Tech Services · Cotonou, Bénin</div>
-      <div class="tl-desc">
-        J'ai fondé <strong>Tsk's Tech Services</strong> avec la conviction que l'Afrique mérite des solutions numériques à la hauteur de ses ambitions.
-        Aujourd'hui, je pilote un studio tech qui conçoit et livre des projets web, des identités visuelles et des expériences utilisateur — toujours avec créativité, rigueur et impact humain au centre.
-        Co-fondé avec <strong>Edmond Guédégbé</strong>, Ingénieur en Cybersécurité.
-      </div>
-    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Août 2024 — Présent</div>
+      <div class="tl-title">Fondateur &amp; PDG</div>
+      <div class="tl-company">Tsk's Tech Services · Cotonou, Bénin</div>
+      <div class="tl-desc">
+        J'ai fondé <strong>Tsk's Tech Services</strong> avec la conviction que l'Afrique mérite des solutions numériques à la hauteur de ses ambitions.
+        Aujourd'hui, je pilote un studio tech qui conçoit et livre des projets web, des identités visuelles et des expériences utilisateur — toujours avec créativité, rigueur et impact humain au centre.
+      </div>
+    </div>
 
-    <div class="tl-item">
-      <div class="tl-dot d2"></div>
-      <div class="tl-period p2">Juin 2023 — Octobre 2024</div>
-      <div class="tl-title">Assistant Infographe</div>
-      <div class="tl-company">C'com · Bénin</div>
-      <div class="tl-desc">
-        Ma première immersion professionnelle dans l'univers de la création visuelle.
-        Au sein de l'équipe créative multimédia de C'com, j'ai aiguisé mes compétences en conception graphique, retouche photo, mise en page et production de supports de communication.
-        Une expérience fondatrice qui a ancré en moi la rigueur du professionnel et l'œil du créatif.
-      </div>
-    </div>
+    <div class="tl-item">
+      <div class="tl-dot d2"></div>
+      <div class="tl-period p2">Juin 2023 — Octobre 2024</div>
+      <div class="tl-title">Assistant Infographe</div>
+      <div class="tl-company">C'com · Bénin</div>
+      <div class="tl-desc">
+        Ma première immersion professionnelle dans l'univers de la création visuelle.
+        Au sein de l'équipe créative multimédia de C'com, j'ai aiguisé mes compétences en conception graphique, retouche photo, mise en page et production de supports de communication.
+        Une expérience fondatrice qui a ancré en moi la rigueur du professionnel et l'œil du créatif.
+      </div>
+    </div>
 
-  </div>
+  </div>
 </section>
 
-<!-- ══ PROJETS ══════════════════════════════════════════ -->
 <section id="projects">
-  <div class="section-tag">Réalisations</div>
-  <h2 class="section-title reveal">Des projets qui<br>ont du sens</h2>
-  <p class="section-sub reveal">
-    Chaque projet que je livre est une réponse à un vrai problème. <strong>Je ne code pas pour le code — je construis pour transformer.</strong>
-  </p>
-  <div class="projects-grid reveal">
+  <div class="section-tag">Réalisations</div>
+  <h2 class="section-title reveal">Des projets qui<br>ont du sens</h2>
+  <p class="section-sub reveal">
+    Chaque projet que je livre est une réponse à un vrai problème. <strong>Je ne code pas pour le code — je construis pour transformer.</strong>
+  </p>
+  <div class="projects-grid reveal">
 
-    <!-- Projet phare -->
-    <div class="project-card featured">
-      <div class="project-thumb pt1">
-        <div class="project-thumb-inner">📚</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">⭐ Projet phare · Bibliothèque numérique</div>
-        <div class="project-name">Tsk's BiblioTech</div>
-        <div class="project-desc">
-          J'ai conçu et développé une bibliothèque virtuelle pour démocratiser l'accès aux ressources académiques en Afrique de l'Ouest. Élèves, étudiants et autodidactes y trouvent livres, cours et outils pédagogiques — gratuitement et en un clic.
-        </div>
-        <div class="tags" style="margin-bottom:1rem;">
-          <span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">↗ Live Demo</a>
-          <a href="#" class="project-link">⌥ GitHub</a>
-        </div>
-      </div>
-    </div>
+    <!-- Projet phare -->
+    <div class="project-card featured">
+      <div class="project-thumb pt1">
+        <div class="project-thumb-inner">📚</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">⭐ Projet phare · Bibliothèque numérique</div>
+        <div class="project-name">Tsk's BiblioTech</div>
+        <div class="project-desc">
+          J'ai conçu et développé une bibliothèque virtuelle pour démocratiser l'accès aux ressources académiques en Afrique de l'Ouest. Élèves, étudiants et autodidactes y trouvent livres, cours et outils pédagogiques — gratuitement et en un clic.
+        </div>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link">↗ Live Demo</a>
+          <a href="#" class="project-link">⌥ GitHub</a>
+        </div>
+      </div>
+    </div>
 
-    <div class="project-card">
-      <div class="project-thumb pt2">
-        <div class="project-thumb-inner">🎨</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">Brand Identity · Infographie</div>
-        <div class="project-name">Rebranding Mary Stell Couture</div>
-        <div class="project-desc">Refonte complète de l'identité visuelle d'une maison de couture : logo, charte graphique, supports print et digitaux. Un univers élégant, du premier trait au dernier pixel.</div>
-        <div class="project-links"><a href="#" class="project-link">↗ Voir le projet</a></div>
-      </div>
-    </div>
+    <div class="project-card">
+      <div class="project-thumb pt2">
+        <div class="project-thumb-inner">🎨</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Brand Identity & Community Managment · Infographie & CEO</div>
+        <div class="project-name">Rebranding Mary Stella Couture</div>
+        <div class="project-desc">Refonte complète de l'identité visuelle d'une maison de couture : logo, charte graphique, supports print et digitaux. Un univers élégant, du premier trait au dernier pixel avec une presence en ligne efective.</div>
+        <div class="project-links"><a href="#" class="project-link">↗ Voir le projet</a></div>
+      </div>
+    </div>
 
-    <div class="project-card">
-      <div class="project-thumb pt3">
-        <div class="project-thumb-inner">💄</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">Site E-commerce · Vitrine</div>
-        <div class="project-name">Juliette's Cosmetics</div>
-        <div class="project-desc">Site vitrine élégant et responsive pour une marque de cosmétiques. Présentation des produits, univers de marque soigné et expérience utilisateur fluide du début à la fin.</div>
-        <div class="project-links"><a href="#" class="project-link">↗ Case Study</a></div>
-      </div>
-    </div>
+    <div class="project-card">
+      <div class="project-thumb pt3">
+        <div class="project-thumb-inner">💄</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Site E-commerce · Vitrine</div>
+        <div class="project-name">Juliette's Cosmetics</div>
+        <div class="project-desc">Site vitrine élégant et responsive pour une marque de cosmétiques basé au TOGO. Présentation des produits, univers de marque soigné et expérience utilisateur fluide du début à la fin.</div>
+        <div class="project-links"><a href="#" class="project-link">↗ Case Study</a></div>
+      </div>
+    </div>
 
-    <div class="project-card">
-      <div class="project-thumb pt4">
-        <div class="project-thumb-inner">🧠</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">Web App · Psychologie</div>
-        <div class="project-name">App Test de Personnalité</div>
-        <div class="project-desc">Application web interactive : l'utilisateur répond à une série de questions et reçoit son profil complet de personnalité — catégorie et type précis. UX soignée, résultats percutants.</div>
-        <div class="project-links">
-          <a href="#" class="project-link">↗ Demo</a>
-          <a href="#" class="project-link">⌥ Code</a>
-        </div>
-      </div>
-    </div>
+    <div class="project-card">
+      <div class="project-thumb pt4">
+        <div class="project-thumb-inner">🧠</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Web App · Psychologie</div>
+        <div class="project-name">App Test de Personnalité</div>
+        <div class="project-desc">Application web interactive : l'utilisateur répond à une série de questions et reçoit son profil complet de personnalité — catégorie et type précis. UX soignée, résultats percutants.</div>
+        <div class="project-links">
+          <a href="#" class="project-link">↗ Demo</a>
+          <a href="#" class="project-link">⌥ Code</a>
+        </div>
+      </div>
+    </div>
 
-    <div class="project-card">
-      <div class="project-thumb pt5">
-        <div class="project-thumb-inner">🌍</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">Initiative · EdTech · Long terme</div>
-        <div class="project-name">Éducation en Afrique par la Tech</div>
-        <div class="project-desc">Plateforme éducative interactive visant à transformer l'accès à l'enseignement via le numérique — formation des enseignants, ressources pour élèves, déploiement régional. Équipe de 4.</div>
-        <div class="project-links"><a href="#" class="project-link">↗ En savoir plus</a></div>
-      </div>
-    </div>
+    <div class="project-card">
+      <div class="project-thumb pt5">
+        <div class="project-thumb-inner">🌍</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Initiative · EdTech · Long terme</div>
+        <div class="project-name">Éducation en Afrique par la Tech</div>
+        <div class="project-desc">Plateforme éducative interactive visant à transformer l'accès à l'enseignement via le numérique — formation des enseignants, ressources pour élèves, déploiement régional. Équipe de 4.</div>
+        <div class="project-links"><a href="#" class="project-link">↗ En savoir plus</a></div>
+      </div>
+    </div>
 
-    <div class="project-card">
-      <div class="project-thumb pt1" style="background:linear-gradient(135deg,#001218,#002a20)">
-        <div class="project-thumb-inner">🤝</div>
-      </div>
-      <div class="project-info">
-        <div class="project-type">Initiative · Inclusion numérique</div>
-        <div class="project-name">TECH FOR ALL</div>
-        <div class="project-desc">Rendre la technologie accessible à tous — jeunes, communautés locales, sans barrières. Formation, accompagnement et ressources digitales pour l'autonomie. Équipe de 3.</div>
-        <div class="project-links"><a href="#" class="project-link">↗ Voir l'initiative</a></div>
-      </div>
-    </div>
+    <div class="project-card">
+      <div class="project-thumb pt1" style="background:linear-gradient(135deg,#001218,#002a20)">
+        <div class="project-thumb-inner">🤝</div>
+      </div>
+      <div class="project-info">
+        <div class="project-type">Initiative · Inclusion numérique</div>
+        <div class="project-name">TECH FOR ALL</div>
+        <div class="project-desc">Rendre la technologie accessible à tous — jeunes, communautés locales, sans barrières. Formation, accompagnement et ressources digitales pour l'autonomie. Équipe de 3.</div>
+        <div class="project-links"><a href="#" class="project-link">↗ Voir l'initiative</a></div>
+      </div>
+    </div>
 
-  </div>
+  </div>
 </section>
 
-<!-- ══ PROCESS ══════════════════════════════════════════ -->
 <section id="process" class="process-section">
-  <div class="section-tag">Méthode</div>
-  <h2 class="section-title reveal">Comment je travaille</h2>
-  <p class="section-sub reveal">
-    Je ne livre pas juste du code ou des visuels — <strong>je m'implique du début à la fin</strong>, avec un processus rigoureux qui garantit des résultats à la hauteur des attentes.
-  </p>
-  <div class="process-grid reveal">
-    <div class="process-step">
-      <span class="step-icon">🔍</span>
-      <h3>Découverte</h3>
-      <p>J'analyse les besoins en profondeur : contexte, audience cible, objectifs business et contraintes. Je ne commence rien avant de comprendre tout.</p>
-    </div>
-    <div class="process-step">
-      <span class="step-icon">✏️</span>
-      <h3>Conception</h3>
-      <p>Architecture de l'information, wireframes, moodboards. Je pose les fondations visuelles et techniques avant d'écrire une seule ligne de code.</p>
-    </div>
-    <div class="process-step">
-      <span class="step-icon">⚙️</span>
-      <h3>Production</h3>
-      <p>Développement itératif, design haute fidélité, tests continus. Je livre par étapes, en m'adaptant aux retours en temps réel.</p>
-    </div>
-    <div class="process-step">
-      <span class="step-icon">🚀</span>
-      <h3>Livraison</h3>
-      <p>Déploiement, documentation claire, transfert de compétences si besoin. Mon travail ne s'arrête pas au dernier commit — il s'arrête quand vous êtes satisfait.</p>
-    </div>
-  </div>
+  <div class="section-tag">Méthode</div>
+  <h2 class="section-title reveal">Comment je travaille</h2>
+  <p class="section-sub reveal">
+    Je ne livre pas juste du code ou des visuels — <strong>je m'implique du début à la fin</strong>, avec un processus rigoureux qui garantit des résultats à la hauteur des attentes.
+  </p>
+  <div class="process-grid reveal">
+    <div class="process-step">
+      <span class="step-icon">🔍</span>
+      <h3>Découverte</h3>
+      <p>J'analyse les besoins en profondeur : contexte, audience cible, objectifs business et contraintes. Je ne commence rien avant de comprendre tout.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-icon">✏️</span>
+      <h3>Conception</h3>
+      <p>Architecture de l'information, wireframes, moodboards. Je pose les fondations visuelles et techniques avant d'écrire une seule ligne de code.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-icon">⚙️</span>
+      <h3>Production</h3>
+      <p>Développement itératif, design haute fidélité, tests continus. Je livre par étapes, en m'adaptant aux retours en temps réel.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-icon">🚀</span>
+      <h3>Livraison</h3>
+      <p>Déploiement, documentation claire, transfert de compétences si besoin. Mon travail ne s'arrête pas au dernier commit — il s'arrête quand vous êtes satisfait.</p>
+    </div>
+  </div>
 </section>
 
-<!-- ══ FORMATION ══════════════════════════════════════════ -->
 <section>
-  <div class="section-tag">Formation</div>
-  <h2 class="section-title reveal">J'ai toujours<br>voulu apprendre</h2>
-  <p class="section-sub reveal">
-    L'apprentissage est pour moi un mode de vie. <strong>Chaque formation a ajouté une couche à ma polyvalence</strong> — du diplôme d'infographie aux sciences exactes.
-  </p>
-  <div class="edu-grid reveal">
-    <div class="edu-card" data-year="2022">
-      <div class="edu-icon">🎨</div>
-      <div class="edu-inst">C'com</div>
-      <div class="edu-major">Diplôme d'Infographie — Création visuelle, conception graphique, production multimédia</div>
-      <div class="edu-year">Diplômé en 2022</div>
-    </div>
-    <div class="edu-card" data-year="2024">
-      <div class="edu-icon">💻</div>
-      <div class="edu-inst">CJLE</div>
-      <div class="edu-major">Informatique &amp; Maîtrise de l'outil — Bureautique, systèmes, réseaux et maintenance</div>
-      <div class="edu-year">Certifié en 2024</div>
-    </div>
-    <div class="edu-card" data-year="2025">
-      <div class="edu-icon">📐</div>
-      <div class="edu-inst">CEG Godomey</div>
-      <div class="edu-major">BAC D — Sciences Mathématiques, Physique-Chimie &amp; Biologie · Niveau BAC+1</div>
-      <div class="edu-year">Obtenu en 2025</div>
-    </div>
-  </div>
+  <div class="section-tag">Formation</div>
+  <h2 class="section-title reveal">J'ai toujours<br>voulu apprendre</h2>
+  <p class="section-sub reveal">
+    L'apprentissage est pour moi un mode de vie. <strong>Chaque formation a ajouté une couche à ma polyvalence</strong> — du diplôme d'infographie aux sciences exactes.
+  </p>
+  <div class="edu-grid reveal">
+    <div class="edu-card" data-year="2022">
+      <div class="edu-icon">🎨</div>
+      <div class="edu-inst">C'com</div>
+      <div class="edu-major">Diplôme d'Infographie — Création visuelle, conception graphique, production multimédia</div>
+      <div class="edu-year">Diplômé en 2022</div>
+    </div>
+    <div class="edu-card" data-year="2024">
+      <div class="edu-icon">💻</div>
+      <div class="edu-inst">CJLE</div>
+      <div class="edu-major">Informatique &amp; Maîtrise de l'outil — Bureautique, systèmes, réseaux et maintenance</div>
+      <div class="edu-year">Certifié en 2024</div>
+    </div>
+    <div class="edu-card" data-year="2025">
+      <div class="edu-icon">📐</div>
+      <div class="edu-inst">CEG Godomey</div>
+      <div class="edu-major">BAC D — Sciences Mathématiques, Physique-Chimie &amp; Biologie · Niveau BAC+1</div>
+      <div class="edu-year">Obtenu en 2025</div>
+    </div>
+  </div>
 </section>
 
-<!-- ══ CONTACT ══════════════════════════════════════════ -->
 <section id="contact" style="background:var(--surf);">
-  <div class="section-tag">Contact</div>
-  <h2 class="section-title reveal">Parlons de<br>votre projet</h2>
-  <p class="section-sub reveal">
-    Vous avez une idée, un projet, une vision ? <strong>Je suis exactement la personne qu'il vous faut.</strong> Écrivez-moi — je réponds vite.
-  </p>
-  <div class="contact-grid reveal">
+  <div class="section-tag">Contact</div>
+  <h2 class="section-title reveal">Parlons de<br>votre projet</h2>
+  <p class="section-sub reveal">
+    Vous avez une idée, un projet, une vision ? <strong>Je suis exactement la personne qu'il vous faut.</strong> Écrivez-moi — je réponds vite.
+  </p>
+  <div class="contact-grid reveal">
 
-    <div>
-      <div class="contact-info">
-        <div class="contact-row">
-          <span class="ci">📧</span>
-          <div><div class="cr-label">Email</div><div class="cr-val">adidomahukpeou@gmail.com</div></div>
-        </div>
-        <div class="contact-row">
-          <span class="ci">📱</span>
-          <div><div class="cr-label">WhatsApp / Appel</div><div class="cr-val">+229 01 52 27 11 98</div></div>
-        </div>
-        <div class="contact-row">
-          <span class="ci">📱</span>
-          <div><div class="cr-label">Ligne 2</div><div class="cr-val">+229 01 60 34 52 65</div></div>
-        </div>
-        <div class="contact-row">
-          <span class="ci">📍</span>
-          <div><div class="cr-label">Localisation</div><div class="cr-val">Godomey · Calavi · Atlantique · Bénin</div></div>
-        </div>
-      </div>
+    <div>
+      <div class="contact-info">
+        <div class="contact-row">
+          <span class="ci">📧</span>
+          <div><div class="cr-label">Email</div><div class="cr-val">adidomahukpeou@gmail.com</div></div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">📱</span>
+          <div><div class="cr-label">WhatsApp / Appel</div><div class="cr-val">+229 01 52 27 11 98</div></div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">📱</span>
+          <div><div class="cr-label">Ligne 2</div><div class="cr-val">+229 01 60 34 52 65</div></div>
+        </div>
+        <div class="contact-row">
+          <span class="ci">📍</span>
+          <div><div class="cr-label">Localisation</div><div class="cr-val">Godomey · Calavi · Atlantique · Bénin</div></div>
+        </div>
+      </div>
 
-      <div class="socials">
-        <a href="https://github.com/FlashTsk17" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">⬡</span>
-          <div class="social-info"><div class="social-name">GitHub</div><div class="social-handle">@FlashTsk17</div></div>
-          <span class="social-arrow">→</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">in</span>
-          <div class="social-info"><div class="social-name">LinkedIn</div><div class="social-handle">Tsadok ADIDO</div></div>
-          <span class="social-arrow">→</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">◈</span>
-          <div class="social-info"><div class="social-name">Facebook / Instagram</div><div class="social-handle">@tsadok.adido</div></div>
-          <span class="social-arrow">→</span>
-        </a>
-      </div>
+      <div class="socials">
+        <a href="https://github.com/FlashTsk17" target="_blank" rel="noopener" class="social-link">
+          <span class="social-icon">⬡</span>
+          <div class="social-info"><div class="social-name">GitHub</div><div class="social-handle">@FlashTsk17</div></div>
+          <span class="social-arrow">→</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="social-link">
+          <span class="social-icon">in</span>
+          <div class="social-info"><div class="social-name">LinkedIn</div><div class="social-handle">Tsadok ADIDO</div></div>
+          <span class="social-arrow">→</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="social-link">
+          <span class="social-icon">◈</span>
+          <div class="social-info"><div class="social-name">Facebook / Instagram</div><div class="social-handle">@tsadok.adido</div></div>
+          <span class="social-arrow">→</span>
+        </a>
+      </div>
 
-      <!-- CV -->
-      <div class="cv-card">
-        <div class="cv-icon">📄</div>
-        <div class="cv-title">Curriculum Vitæ complet</div>
-        <div class="cv-sub">Toutes mes expériences, formations et références professionnelles en un document.</div>
-        <!-- 👇 REMPLACE href="#" par le lien direct de ton CV PDF -->
-        <a href="#" target="_blank" rel="noopener" class="btn-primary">📥 Voir mon CV</a>
-      </div>
-    </div>
+      <!-- CV -->
+      <div class="cv-card">
+        <div class="cv-icon">📄</div>
+        <div class="cv-title">Curriculum Vitæ complet</div>
+        <div class="cv-sub">Toutes mes expériences, formations et références professionnelles en un document.</div>
+        <!-- 👇 REMPLACE href="#" par le lien direct de ton CV PDF -->
+        <a href="#" target="_blank" rel="noopener" class="btn-primary">📥 Voir mon CV</a>
+      </div>
+    </div>
 
-    <!-- Formulaire -->
-    <div class="form-stack">
-      <div class="fg"><label>Nom &amp; Prénom</label><input type="text" placeholder="Jean Dupont" autocomplete="name"></div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.com" autocomplete="email"></div>
-      <div class="fg"><label>Sujet</label><input type="text" placeholder="Site web, App mobile, Identité visuelle..."></div>
-      <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet, vos attentes et votre calendrier..."></textarea></div>
-      <button class="btn-primary" type="button" style="width:100%;justify-content:center;">Envoyer le message →</button>
-    </div>
+    <!-- Formulaire -->
+    <div class="form-stack">
+      <div class="fg"><label>Nom &amp; Prénom</label><input type="text" placeholder="Jean Dupont" autocomplete="name"></div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="jean@exemple.com" autocomplete="email"></div>
+      <div class="fg"><label>Sujet</label><input type="text" placeholder="Site web, App mobile, Identité visuelle..."></div>
+      <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet, vos attentes et votre calendrier..."></textarea></div>
+      <button class="btn-primary" type="button" style="width:100%;justify-content:center;">Envoyer le message →</button>
+    </div>
 
-  </div>
+  </div>
 </section>
 
 <!-- ══ FOOTER ══════════════════════════════════════════ -->
 <footer>
-  <span>© 2026 Tsadok ADIDO — Tsk's Tech Services · Cotonou, Bénin</span>
-  <div class="footer-status"><div class="fdot"></div><span>Disponible pour collaborer ✦</span></div>
+  <span>© 2026 Tsadok ADIDO — Tsk's Tech Services · Cotonou, Bénin</span>
+  <div class="footer-status"><div class="fdot"></div><span>Disponible pour collaborer ✦</span></div>
 </footer>
 
 <!-- ══ SCRIPTS ══════════════════════════════════════════ -->
 <script>
 (function(){
-  'use strict';
+  'use strict';
 
-  /* 1 — HAMBURGER */
-  var btn = document.getElementById('hamburger');
-  var nav = document.getElementById('navLinks');
-  function closeMenu(){
-    btn.classList.remove('open');
-    nav.classList.remove('open');
-    document.body.style.overflow='';
-    btn.setAttribute('aria-label','Ouvrir le menu');
-  }
-  btn.addEventListener('click',function(){
-    var open=nav.classList.toggle('open');
-    btn.classList.toggle('open',open);
-    document.body.style.overflow=open?'hidden':'';
-    btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
-  });
-  document.querySelectorAll('.ni').forEach(function(a){a.addEventListener('click',closeMenu);});
+  /* 1 — HAMBURGER */
+  var btn = document.getElementById('hamburger');
+  var nav = document.getElementById('navLinks');
+  function closeMenu(){
+    btn.classList.remove('open');
+    nav.classList.remove('open');
+    document.body.style.overflow='';
+    btn.setAttribute('aria-label','Ouvrir le menu');
+  }
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    btn.classList.toggle('open',open);
+    document.body.style.overflow=open?'hidden':'';
+    btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+  });
+  document.querySelectorAll('.ni').forEach(function(a){a.addEventListener('click',closeMenu);});
 
-  /* 2 — CURSOR (mouse only) */
-  if(window.matchMedia('(hover:hover)').matches){
-    var dot=document.getElementById('cursor');
-    var ring=document.getElementById('cursorRing');
-    var mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',function(e){
-      mx=e.clientX;my=e.clientY;
-      dot.style.transform='translate('+(mx-6)+'px,'+(my-6)+'px)';
-    });
-    (function loop(){
-      rx+=(mx-rx-20)*0.12;ry+=(my-ry-20)*0.12;
-      ring.style.transform='translate('+rx+'px,'+ry+'px)';
-      requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a,button').forEach(function(el){
-      el.addEventListener('mouseenter',function(){ring.style.width='60px';ring.style.height='60px';});
-      el.addEventListener('mouseleave',function(){ring.style.width='40px';ring.style.height='40px';});
-    });
-    /* Skill group spotlight */
-    document.querySelectorAll('.skill-group').forEach(function(g){
-      g.addEventListener('mousemove',function(e){
-        var r=g.getBoundingClientRect();
-        g.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-        g.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
-      });
-    });
-  }
+  /* 2 — CURSOR (mouse only) */
+  if(window.matchMedia('(hover:hover)').matches){
+    var dot=document.getElementById('cursor');
+    var ring=document.getElementById('cursorRing');
+    var mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',function(e){
+      mx=e.clientX;my=e.clientY;
+      dot.style.transform='translate('+(mx-6)+'px,'+(my-6)+'px)';
+    });
+    (function loop(){
+      rx+=(mx-rx-20)*0.12;ry+=(my-ry-20)*0.12;
+      ring.style.transform='translate('+rx+'px,'+ry+'px)';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a,button').forEach(function(el){
+      el.addEventListener('mouseenter',function(){ring.style.width='60px';ring.style.height='60px';});
+      el.addEventListener('mouseleave',function(){ring.style.width='40px';ring.style.height='40px';});
+    });
+    /* Skill group spotlight */
+    document.querySelectorAll('.skill-group').forEach(function(g){
+      g.addEventListener('mousemove',function(e){
+        var r=g.getBoundingClientRect();
+        g.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+        g.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+      });
+    });
+  }
 
-  /* 3 — SCROLL REVEAL */
-  var revObs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e,i){
-      if(e.isIntersecting){
-        setTimeout(function(){e.target.classList.add('visible');},i*80);
-      }
-    });
-  },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
+  /* 3 — SCROLL REVEAL */
+  var revObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){
+        setTimeout(function(){e.target.classList.add('visible');},i*80);
+      }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
 
-  /* 4 — STAT COUNTER */
-  var statObs=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.querySelectorAll('.stat-num').forEach(function(num){
-          var match=num.textContent.match(/\d+/);
-          if(match){
-            var target=parseInt(match[0]),cur=0,step=target/30;
-            var orig=num.innerHTML;
-            var t=setInterval(function(){
-              cur=Math.min(cur+step,target);
-              num.innerHTML=orig.replace(/\d+/,Math.round(cur));
-              if(cur>=target)clearInterval(t);
-            },40);
-          }
-        });
-        statObs.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.5});
-  var sb=document.querySelector('.stats-bar');
-  if(sb)statObs.observe(sb);
+  /* 4 — STAT COUNTER */
+  var statObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.stat-num').forEach(function(num){
+          var match=num.textContent.match(/\d+/);
+          if(match){
+            var target=parseInt(match[0]),cur=0,step=target/30;
+            var orig=num.innerHTML;
+            var t=setInterval(function(){
+              cur=Math.min(cur+step,target);
+              num.innerHTML=orig.replace(/\d+/,Math.round(cur));
+              if(cur>=target)clearInterval(t);
+            },40);
+          }
+        });
+        statObs.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.5});
+  var sb=document.querySelector('.stats-bar');
+  if(sb)statObs.observe(sb);
 
-  /* 5 — GAUGES */
-  var CIRC=2*Math.PI*30; // r=30 → ≈188.495
-  document.querySelectorAll('.g-fill').forEach(function(c){c.style.strokeDashoffset=CIRC;});
+  /* 5 — GAUGES */
+  var CIRC=2*Math.PI*30; // r=30 → ≈188.495
+  document.querySelectorAll('.g-fill').forEach(function(c){c.style.strokeDashoffset=CIRC;});
 
-  function fillGauges(container){
-    container.querySelectorAll('.g-fill[data-level]').forEach(function(c){
-      c.style.strokeDashoffset=CIRC*(1-parseFloat(c.dataset.level)/10);
-    });
-  }
+  function fillGauges(container){
+    container.querySelectorAll('.g-fill[data-level]').forEach(function(c){
+      c.style.strokeDashoffset=CIRC*(1-parseFloat(c.dataset.level)/10);
+    });
+  }
 
-  var gObs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){fillGauges(e.target);gObs.unobserve(e.target);}
-    });
-  },{threshold:0.25});
-  document.querySelectorAll('.skill-group').forEach(function(g){gObs.observe(g);});
+  var gObs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){fillGauges(e.target);gObs.unobserve(e.target);}
+    });
+  },{threshold:0.25});
+  document.querySelectorAll('.skill-group').forEach(function(g){gObs.observe(g);});
 
-  var lRow=document.getElementById('langRow');
-  if(lRow){
-    var lObs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){fillGauges(e.target);lObs.unobserve(e.target);}
-      });
-    },{threshold:0.15});
-    lObs.observe(lRow);
-  }
+  var lRow=document.getElementById('langRow');
+  if(lRow){
+    var lObs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){fillGauges(e.target);lObs.unobserve(e.target);}
+      });
+    },{threshold:0.15});
+    lObs.observe(lRow);
+  }
 
 })();
 </script>
