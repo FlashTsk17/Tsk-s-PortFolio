@@ -217,6 +217,25 @@ collections:
               - {label: "Nom", name: "name", widget: "string"}
               - {label: "Description FR", name: "description_fr", widget: "text"}
               - {label: "Description EN", name: "description_en", widget: "text"}
+  - name: "gallery"
+    label: "Galerie UX/UI"
+    files:
+      - name: "gallery"
+        label: "Captures d’interface"
+        file: "data/gallery.json"
+        fields:
+          - label: "Captures"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.project}}"
+            required: false
+            fields:
+              - {label: "Projet associé", name: "project", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Légende FR", name: "caption_fr", widget: "string"}
+              - {label: "Caption EN", name: "caption_en", widget: "string"}
+              - {label: "Texte alternatif FR", name: "alt_fr", widget: "string"}
+              - {label: "Alt text EN", name: "alt_en", widget: "string"}
   - name: "interface"
     label: "Libellés de l’interface"
     files:
