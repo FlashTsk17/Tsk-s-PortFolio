@@ -194,5 +194,9 @@
   "footer.admin": {
     "fr": "Administration",
     "en": "Admin"
+  },
+  "contact.location": {
+    "fr": "Localisation",
+    "en": "Location"
   }
 }
