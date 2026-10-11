@@ -15,7 +15,9 @@
       "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
       "status": "termine",
       "featured": true,
-      "mark": "DC"
+      "mark": "DC",
+      "image_desktop": "assets/img/diagnocommerce-desktop.png",
+      "image_mobile": "assets/img/diagnocommerce-mobile.png"
     },
     {
       "id": "celebrationslink",
@@ -59,6 +61,51 @@
       "status": "en_refonte",
       "featured": false,
       "mark": "PL"
+    },
+    {
+      "id": "elegance-by-andi",
+      "name": "Elegance by Andi",
+      "description_fr": "Présentation d'une réalisation web dédiée à Elegance by Andi, avec aperçu sur ordinateur et mobile.",
+      "description_en": "A web project showcase for Elegance by Andi, with desktop and mobile previews.",
+      "tags": [
+        "Web design",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "EA",
+      "image_desktop": "assets/img/elegance-by-andi-desktop.png",
+      "image_mobile": "assets/img/elegance-by-andi-mobile.png"
+    },
+    {
+      "id": "maison-ph",
+      "name": "Maison PH",
+      "description_fr": "Présentation d'une réalisation web pour Maison PH, avec aperçu sur ordinateur et mobile.",
+      "description_en": "A web project showcase for Maison PH, with desktop and mobile previews.",
+      "tags": [
+        "Web design",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "PH",
+      "image_desktop": "assets/img/maison-ph-desktop.png",
+      "image_mobile": "assets/img/maison-ph-mobile.png"
+    },
+    {
+      "id": "juliette-cosmetics-shop",
+      "name": "Juliette's Cosmetics Shop",
+      "description_fr": "Présentation d'une réalisation web pour Juliette's Cosmetics Shop, avec aperçu sur ordinateur et mobile.",
+      "description_en": "A web project showcase for Juliette's Cosmetics Shop, with desktop and mobile previews.",
+      "tags": [
+        "E-commerce",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "JC",
+      "image_desktop": "assets/img/juliette-cosmetics-desktop.png",
+      "image_mobile": "assets/img/juliette-cosmetics-mobile.png"
     }
   ]
 }
