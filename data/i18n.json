@@ -1,0 +1,198 @@
+{
+  "nav.profile": {
+    "fr": "Profil",
+    "en": "Profile"
+  },
+  "nav.skills": {
+    "fr": "Compétences",
+    "en": "Skills"
+  },
+  "nav.experience": {
+    "fr": "Expérience",
+    "en": "Experience"
+  },
+  "nav.proof": {
+    "fr": "Preuves",
+    "en": "Proof"
+  },
+  "nav.projects": {
+    "fr": "Projets",
+    "en": "Projects"
+  },
+  "nav.impact": {
+    "fr": "Impact",
+    "en": "Impact"
+  },
+  "nav.contact": {
+    "fr": "Contact",
+    "en": "Contact"
+  },
+  "nav.cv": {
+    "fr": "Télécharger mon CV",
+    "en": "Download my CV"
+  },
+  "hero.projects": {
+    "fr": "Voir mes projets ↘",
+    "en": "View my work ↘"
+  },
+  "hero.contact": {
+    "fr": "Me contacter",
+    "en": "Get in touch"
+  },
+  "hero.caption": {
+    "fr": "Concevoir · Construire · Transmettre",
+    "en": "Design · Build · Share"
+  },
+  "section.profile": {
+    "fr": "Le profil",
+    "en": "The profile"
+  },
+  "section.skills": {
+    "fr": "Outils & pratiques",
+    "en": "Tools & practice"
+  },
+  "section.experience": {
+    "fr": "Parcours",
+    "en": "Experience"
+  },
+  "section.proof": {
+    "fr": "Preuves concrètes",
+    "en": "Proof of work"
+  },
+  "section.projects": {
+    "fr": "Études de cas",
+    "en": "Case studies"
+  },
+  "section.impact": {
+    "fr": "Impact local",
+    "en": "Local impact"
+  },
+  "section.design": {
+    "fr": "Interfaces & expérience",
+    "en": "Interfaces & experience"
+  },
+  "section.initiatives": {
+    "fr": "À long terme",
+    "en": "Long-term vision"
+  },
+  "section.education": {
+    "fr": "Formation",
+    "en": "Education"
+  },
+  "section.languages": {
+    "fr": "Langues",
+    "en": "Languages"
+  },
+  "section.contact": {
+    "fr": "Contact",
+    "en": "Contact"
+  },
+  "heading.profile": {
+    "fr": "Un pied dans le design, l’autre dans l’ingénierie.",
+    "en": "One foot in design, the other in engineering."
+  },
+  "heading.skills": {
+    "fr": "Ce que je sais construire.",
+    "en": "What I can build."
+  },
+  "heading.experience": {
+    "fr": "Apprendre en livrant.",
+    "en": "Learning by shipping."
+  },
+  "heading.proof": {
+    "fr": "Hackathons & certifications.",
+    "en": "Hackathons & certifications."
+  },
+  "heading.certifications": {
+    "fr": "Certifications",
+    "en": "Certifications"
+  },
+  "heading.projects": {
+    "fr": "Des idées mises en mouvement.",
+    "en": "Ideas put into motion."
+  },
+  "heading.design": {
+    "fr": "Le produit, vu de l’écran.",
+    "en": "The product, on screen."
+  },
+  "heading.initiatives": {
+    "fr": "La technologie doit ouvrir des portes.",
+    "en": "Technology should open doors."
+  },
+  "heading.education": {
+    "fr": "Des bases, puis la suite.",
+    "en": "Foundations, then what’s next."
+  },
+  "heading.languages": {
+    "fr": "Parler pour mieux relier.",
+    "en": "Language connects people."
+  },
+  "heading.contact": {
+    "fr": "Une idée à construire ?",
+    "en": "Something to build?"
+  },
+  "theme.dark": {
+    "fr": "Activer le thème sombre",
+    "en": "Switch to dark theme"
+  },
+  "theme.light": {
+    "fr": "Activer le thème clair",
+    "en": "Switch to light theme"
+  },
+  "date.present": {
+    "fr": "Présent",
+    "en": "Present"
+  },
+  "status.soumis": {
+    "fr": "Soumis",
+    "en": "Submitted"
+  },
+  "status.en_cours": {
+    "fr": "En cours",
+    "en": "In progress"
+  },
+  "status.à_venir": {
+    "fr": "À venir",
+    "en": "Upcoming"
+  },
+  "status.termine": {
+    "fr": "Terminé",
+    "en": "Completed"
+  },
+  "status.en_developpement": {
+    "fr": "En développement",
+    "en": "In development"
+  },
+  "status.en_refonte": {
+    "fr": "En refonte",
+    "en": "Being rebuilt"
+  },
+  "status.obtenu": {
+    "fr": "Obtenu",
+    "en": "Earned"
+  },
+  "link.repository": {
+    "fr": "Code source ↗",
+    "en": "Source code ↗"
+  },
+  "link.demo": {
+    "fr": "Voir la démo ↗",
+    "en": "View demo ↗"
+  },
+  "link.website": {
+    "fr": "Voir le site ↗",
+    "en": "Visit website ↗"
+  },
+  "gallery.pending": {
+    "fr": "Les captures d’interface seront ajoutées ici dès qu’elles seront disponibles.",
+    "en": "Interface screenshots will appear here as soon as they are available."
+  },
+  "footer.top": {
+    "fr": "Retour en haut ↑",
+    "en": "Back to top ↑"
+  },
+  "footer.admin": {
+    "fr": "Administration",
+    "en": "Admin"
+  }
+}
