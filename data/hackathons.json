@@ -1,57 +1,59 @@
-[
-  {
-    "id": "diagnocommerce-ai-factory",
-    "name": "DiagnoCommerce — AI Factory Hackathon",
-    "date": "2026-08",
-    "description_fr": "Outil de diagnostic IA pour petits commerçants, conçu et développé solo en sprint de 48h. React, TypeScript, Supabase, Claude (Anthropic) via API. Soumis dans les délais.",
-    "description_en": "AI diagnostic tool for small merchants, designed and built solo in a 48-hour sprint. React, TypeScript, Supabase, Claude (Anthropic) via API. Submitted on time.",
-    "status": "soumis",
-    "repo_url": "https://github.com/FlashTsk17/DiagnoCommerce",
-    "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
-    "certificate": false
-  },
-  {
-    "id": "trade-verification-firewall",
-    "name": "Trade Verification Firewall — Alpaca Hackathon",
-    "date": "2026-08/09",
-    "description_fr": "Système à deux agents IA (génération de signaux de trading + vérification croisée) pour limiter les hallucinations IA en trading. Stack : n8n, Claude, Alpaca MCP. Projet soumis, certificat obtenu.",
-    "description_en": "Two-agent AI system (trade signal generation + cross-verification) to reduce AI hallucination in trading. Stack: n8n, Claude, Alpaca MCP. Submitted; certificate obtained.",
-    "status": "soumis",
-    "repo_url": "",
-    "demo_url": "",
-    "certificate": true
-  },
-  {
-    "id": "afri-edge-infraforge",
-    "name": "AFRI-EDGE / InfraForge 7X — AI Infra Summit Hackathon",
-    "date": "2026-09",
-    "description_fr": "Runtime IA orchestrant et routant intelligemment des workloads entre Local, Edge et Cloud selon latence, coût et complexité. Projet soumis.",
-    "description_en": "Infrastructure-aware AI runtime intelligently orchestrating and routing workloads across Local, Edge and Cloud based on latency, cost and complexity. Submitted.",
-    "status": "soumis",
-    "repo_url": "",
-    "demo_url": "",
-    "certificate": false
-  },
-  {
-    "id": "amd-act-iii",
-    "name": "AMD Developer Hackathon ACT III",
-    "date": "2026-10",
-    "description_fr": "Agents IA et applications hautes performances sur GPU AMD. En cours.",
-    "description_en": "AI agents and high-performance applications on AMD GPUs. In progress.",
-    "status": "en_cours",
-    "repo_url": "",
-    "demo_url": "",
-    "certificate": false
-  },
-  {
-    "id": "ai-big-data-expo",
-    "name": "AI & Big Data Expo Europe",
-    "date": "2026-10",
-    "description_fr": "Participation au hackathon AI & Big Data Expo Europe (lablab.ai / TechEx Events).",
-    "description_en": "Participating in the AI & Big Data Expo Europe Hackathon (lablab.ai / TechEx Events).",
-    "status": "en_cours",
-    "repo_url": "",
-    "demo_url": "",
-    "certificate": false
-  }
-]
+{
+  "items": [
+    {
+      "id": "diagnocommerce-ai-factory",
+      "name": "DiagnoCommerce — AI Factory Hackathon",
+      "date": "2026-08",
+      "description_fr": "Outil de diagnostic IA pour petits commerçants, conçu et développé solo en sprint de 48h. React, TypeScript, Supabase, Claude (Anthropic) via API. Soumis dans les délais.",
+      "description_en": "AI diagnostic tool for small merchants, designed and built solo in a 48-hour sprint. React, TypeScript, Supabase, Claude (Anthropic) via API. Submitted on time.",
+      "status": "soumis",
+      "repo_url": "https://github.com/FlashTsk17/DiagnoCommerce",
+      "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
+      "certificate": false
+    },
+    {
+      "id": "trade-verification-firewall",
+      "name": "Trade Verification Firewall — Alpaca Hackathon",
+      "date": "2026-08/09",
+      "description_fr": "Système à deux agents IA (génération de signaux de trading + vérification croisée) pour limiter les hallucinations IA en trading. Stack : n8n, Claude, Alpaca MCP. Projet soumis, certificat obtenu.",
+      "description_en": "Two-agent AI system (trade signal generation + cross-verification) to reduce AI hallucination in trading. Stack: n8n, Claude, Alpaca MCP. Submitted; certificate obtained.",
+      "status": "soumis",
+      "repo_url": "",
+      "demo_url": "",
+      "certificate": true
+    },
+    {
+      "id": "afri-edge-infraforge",
+      "name": "AFRI-EDGE / InfraForge 7X — AI Infra Summit Hackathon",
+      "date": "2026-09",
+      "description_fr": "Runtime IA orchestrant et routant intelligemment des workloads entre Local, Edge et Cloud selon latence, coût et complexité. Projet soumis.",
+      "description_en": "Infrastructure-aware AI runtime intelligently orchestrating and routing workloads across Local, Edge and Cloud based on latency, cost and complexity. Submitted.",
+      "status": "soumis",
+      "repo_url": "",
+      "demo_url": "",
+      "certificate": false
+    },
+    {
+      "id": "amd-act-iii",
+      "name": "AMD Developer Hackathon ACT III",
+      "date": "2026-10",
+      "description_fr": "Agents IA et applications hautes performances sur GPU AMD. En cours.",
+      "description_en": "AI agents and high-performance applications on AMD GPUs. In progress.",
+      "status": "en_cours",
+      "repo_url": "",
+      "demo_url": "",
+      "certificate": false
+    },
+    {
+      "id": "ai-big-data-expo",
+      "name": "AI & Big Data Expo Europe",
+      "date": "2026-10",
+      "description_fr": "Participation au hackathon AI & Big Data Expo Europe (lablab.ai / TechEx Events).",
+      "description_en": "Participating in the AI & Big Data Expo Europe Hackathon (lablab.ai / TechEx Events).",
+      "status": "en_cours",
+      "repo_url": "",
+      "demo_url": "",
+      "certificate": false
+    }
+  ]
+}
