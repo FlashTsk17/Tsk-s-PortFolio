@@ -1,38 +1,40 @@
-[
-  {
-    "id": "tsk-tech-services",
-    "title_fr": "Fondateur & PDG",
-    "title_en": "Founder & CEO",
-    "organization": "Tsk's Tech Services",
-    "location_fr": "Cotonou, Bénin",
-    "location_en": "Cotonou, Benin",
-    "start_date": "Août 2024",
-    "end_date": null,
-    "description_fr": "Fondation et direction d'un studio tech livrant développement web/mobile, design UX/UI, identité de marque et communication digitale pour des clients au Bénin. Je pilote aussi Tsk Tremplin, notre programme d'accompagnement digital gratuit pour artisans et commerçants.",
-    "description_en": "Founded and run a tech studio delivering web/mobile development, UX/UI design, brand identity and digital communication for clients across Benin. I also lead Tsk Tremplin, our free digital accompaniment program for artisans and merchants."
-  },
-  {
-    "id": "mpds-literacy",
-    "title_fr": "Formateur de français (alphabétisation)",
-    "title_en": "French Literacy Instructor",
-    "organization": "MPDS (Mouvement Missionnaire), École des Béréens",
-    "location_fr": "Zè, Bénin",
-    "location_en": "Zè, Benin",
-    "start_date": "Août 2025",
-    "end_date": null,
-    "description_fr": "Cours de français pour apprenants adultes dans le cadre d'un programme d'alphabétisation porté par une ONG. Préparation des séances, suivi de la progression, documents de fin de formation.",
-    "description_en": "French language classes for adult learners as part of an NGO-led literacy program. Lesson planning, progress tracking, and end-of-training documentation."
-  },
-  {
-    "id": "ccom-graphic-design",
-    "title_fr": "Assistant Infographe",
-    "title_en": "Graphic Design Assistant",
-    "organization": "C'com",
-    "location_fr": "Bénin",
-    "location_en": "Benin",
-    "start_date": "Juin 2023",
-    "end_date": "Octobre 2024",
-    "description_fr": "Conception graphique et retouche photo pour des supports de communication multimédia.",
-    "description_en": "Graphic design and photo retouching for multimedia communication materials."
-  }
-]
+{
+  "items": [
+    {
+      "id": "tsk-tech-services",
+      "title_fr": "Fondateur & PDG",
+      "title_en": "Founder & CEO",
+      "organization": "Tsk's Tech Services",
+      "location_fr": "Cotonou, Bénin",
+      "location_en": "Cotonou, Benin",
+      "start_date": "Août 2024",
+      "end_date": null,
+      "description_fr": "Fondation et direction d'un studio tech livrant développement web/mobile, design UX/UI, identité de marque et communication digitale pour des clients au Bénin. Je pilote aussi Tsk Tremplin, notre programme d'accompagnement digital gratuit pour artisans et commerçants.",
+      "description_en": "Founded and run a tech studio delivering web/mobile development, UX/UI design, brand identity and digital communication for clients across Benin. I also lead Tsk Tremplin, our free digital accompaniment program for artisans and merchants."
+    },
+    {
+      "id": "mpds-literacy",
+      "title_fr": "Formateur de français (alphabétisation)",
+      "title_en": "French Literacy Instructor",
+      "organization": "MPDS (Mouvement Missionnaire), École des Béréens",
+      "location_fr": "Zè, Bénin",
+      "location_en": "Zè, Benin",
+      "start_date": "Août 2025",
+      "end_date": null,
+      "description_fr": "Cours de français pour apprenants adultes dans le cadre d'un programme d'alphabétisation porté par une ONG. Préparation des séances, suivi de la progression, documents de fin de formation.",
+      "description_en": "French language classes for adult learners as part of an NGO-led literacy program. Lesson planning, progress tracking, and end-of-training documentation."
+    },
+    {
+      "id": "ccom-graphic-design",
+      "title_fr": "Assistant Infographe",
+      "title_en": "Graphic Design Assistant",
+      "organization": "C'com",
+      "location_fr": "Bénin",
+      "location_en": "Benin",
+      "start_date": "Juin 2023",
+      "end_date": "Octobre 2024",
+      "description_fr": "Conception graphique et retouche photo pour des supports de communication multimédia.",
+      "description_en": "Graphic design and photo retouching for multimedia communication materials."
+    }
+  ]
+}
