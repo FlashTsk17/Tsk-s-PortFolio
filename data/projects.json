@@ -1,62 +1,64 @@
-[
-  {
-    "id": "diagnocommerce",
-    "name": "DiagnoCommerce",
-    "description_fr": "Outil de diagnostic IA pour petits commerçants, conçu et développé solo en sprint de 48h. React, TypeScript, Supabase et Claude via API.",
-    "description_en": "AI diagnostic tool for small merchants, designed and built solo in a 48-hour sprint. React, TypeScript, Supabase and Claude via API.",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Supabase",
-      "Claude API"
-    ],
-    "repo_url": "https://github.com/FlashTsk17/DiagnoCommerce",
-    "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
-    "status": "termine",
-    "featured": true,
-    "mark": "DC"
-  },
-  {
-    "id": "celebrationslink",
-    "name": "CelebrationsLink",
-    "description_fr": "Plateforme qui transforme une célébration en expérience digitale personnalisée, interactive et partageable via un simple lien. Architecture en cours de refonte pour séparer UI, logique métier, données et partage, et la rendre générique et extensible à de nouveaux types de célébrations (au-delà des premiers formats BirthdayLink et MothersLink).",
-    "description_en": "A platform that turns a celebration into a personalized, interactive digital experience shareable through a single link. Architecture currently being redesigned to separate UI, business logic, data and sharing layers, making it generic and extensible to new celebration types (beyond the initial BirthdayLink and MothersLink formats).",
-    "tags": [
-      "React",
-      "Vite"
-    ],
-    "repo_url": "https://github.com/FlashTsk17/CelebrationsLink",
-    "demo_url": "https://celebrations-link.vercel.app/",
-    "status": "en_developpement",
-    "featured": true,
-    "mark": "CL"
-  },
-  {
-    "id": "africa-bibliotech",
-    "name": "Africa BiblioTech",
-    "description_fr": "Bibliothèque numérique pensée pour démocratiser l'accès aux ressources académiques en Afrique de l'Ouest : livres, cours et outils pédagogiques gratuits pour élèves, étudiants et autodidactes.",
-    "description_en": "A digital library built to democratize access to academic resources in West Africa: free books, courses and learning tools for students and self-learners.",
-    "tags": [
-      "Node.js",
-      "MongoDB",
-      "JWT"
-    ],
-    "repo_url": "",
-    "demo_url": "",
-    "status": "en_developpement",
-    "featured": true,
-    "mark": "AB"
-  },
-  {
-    "id": "tsk-personalab",
-    "name": "Tsk PersonaLab",
-    "description_fr": "Application web interactive de test de personnalité, en cours de refonte complète sous un nouveau nom. Bientôt disponible.",
-    "description_en": "Interactive personality-test web app, currently undergoing a full rebuild under a new name. Coming soon.",
-    "tags": [],
-    "repo_url": "",
-    "demo_url": "",
-    "status": "en_refonte",
-    "featured": false,
-    "mark": "PL"
-  }
-]
+{
+  "items": [
+    {
+      "id": "diagnocommerce",
+      "name": "DiagnoCommerce",
+      "description_fr": "Outil de diagnostic IA pour petits commerçants, conçu et développé solo en sprint de 48h. React, TypeScript, Supabase et Claude via API.",
+      "description_en": "AI diagnostic tool for small merchants, designed and built solo in a 48-hour sprint. React, TypeScript, Supabase and Claude via API.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Claude API"
+      ],
+      "repo_url": "https://github.com/FlashTsk17/DiagnoCommerce",
+      "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
+      "status": "termine",
+      "featured": true,
+      "mark": "DC"
+    },
+    {
+      "id": "celebrationslink",
+      "name": "CelebrationsLink",
+      "description_fr": "Plateforme qui transforme une célébration en expérience digitale personnalisée, interactive et partageable via un simple lien. Architecture en cours de refonte pour séparer UI, logique métier, données et partage, et la rendre générique et extensible à de nouveaux types de célébrations (au-delà des premiers formats BirthdayLink et MothersLink).",
+      "description_en": "A platform that turns a celebration into a personalized, interactive digital experience shareable through a single link. Architecture currently being redesigned to separate UI, business logic, data and sharing layers, making it generic and extensible to new celebration types (beyond the initial BirthdayLink and MothersLink formats).",
+      "tags": [
+        "React",
+        "Vite"
+      ],
+      "repo_url": "https://github.com/FlashTsk17/CelebrationsLink",
+      "demo_url": "https://celebrations-link.vercel.app/",
+      "status": "en_developpement",
+      "featured": true,
+      "mark": "CL"
+    },
+    {
+      "id": "africa-bibliotech",
+      "name": "Africa BiblioTech",
+      "description_fr": "Bibliothèque numérique pensée pour démocratiser l'accès aux ressources académiques en Afrique de l'Ouest : livres, cours et outils pédagogiques gratuits pour élèves, étudiants et autodidactes.",
+      "description_en": "A digital library built to democratize access to academic resources in West Africa: free books, courses and learning tools for students and self-learners.",
+      "tags": [
+        "Node.js",
+        "MongoDB",
+        "JWT"
+      ],
+      "repo_url": "",
+      "demo_url": "",
+      "status": "en_developpement",
+      "featured": true,
+      "mark": "AB"
+    },
+    {
+      "id": "tsk-personalab",
+      "name": "Tsk PersonaLab",
+      "description_fr": "Application web interactive de test de personnalité, en cours de refonte complète sous un nouveau nom. Bientôt disponible.",
+      "description_en": "Interactive personality-test web app, currently undergoing a full rebuild under a new name. Coming soon.",
+      "tags": [],
+      "repo_url": "",
+      "demo_url": "",
+      "status": "en_refonte",
+      "featured": false,
+      "mark": "PL"
+    }
+  ]
+}
