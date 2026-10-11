@@ -3,9 +3,11 @@
     {
       "id": "diagnocommerce",
       "name": "DiagnoCommerce",
-      "description_fr": "Outil de diagnostic IA pour petits commerçants, conçu et développé solo en sprint de 48h. React, TypeScript, Supabase et Claude via API.",
-      "description_en": "AI diagnostic tool for small merchants, designed and built solo in a 48-hour sprint. React, TypeScript, Supabase and Claude via API.",
+      "description_fr": "Conçu et développé en solo en 48 h : de la réflexion UI/UX et la conception de l'interface au développement front-end et à l'intégration des services. React, TypeScript, Supabase et Claude via API.",
+      "description_en": "Designed and built solo in 48 hours, from UI/UX thinking and interface design to front-end development and service integration. React, TypeScript, Supabase and Claude via API.",
       "tags": [
+        "UI/UX Design",
+        "Front-end",
         "React",
         "TypeScript",
         "Supabase",
