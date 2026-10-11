@@ -40,7 +40,15 @@
       "demo_url": "https://celebrations-link.vercel.app/",
       "status": "en_developpement",
       "featured": true,
-      "mark": "CL"
+      "mark": "CL",
+      "image_desktop": "assets/img/CelebrationsLink-desktop.png",
+      "image_mobile": "assets/img/CelebrationsLink-mobile.png",
+      "focus": {
+        "uiux_fr": "Conception de l’expérience de célébration : structure de l’interface, parcours utilisateur et adaptation aux écrans ordinateur et mobile.",
+        "uiux_en": "Celebration experience design: interface structure, user journey, and adaptation to desktop and mobile screens.",
+        "dev_fr": "Plateforme React/Vite en évolution. Des réglages internes restent en cours avant de considérer l’expérience comme pleinement stabilisée.",
+        "dev_en": "Evolving React/Vite platform. Internal configuration is still in progress before the experience can be considered fully stabilized."
+      }
     },
     {
       "id": "africa-bibliotech",
