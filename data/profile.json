@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "fr": {
+      "title": "Tsadok Adido — Développeur Web & Designer UX/UI | Cotonou, Bénin",
+      "description": "Développeur web/mobile et designer UX/UI basé à Cotonou. Fondateur de Tsk's Tech Services. Projets IA, hackathons internationaux et accompagnement digital d'entrepreneurs au Bénin."
+    },
+    "en": {
+      "title": "Tsadok Adido — Web Developer & UX/UI Designer | Cotonou, Benin",
+      "description": "Web/mobile developer and UX/UI designer based in Cotonou, Benin. Founder of Tsk's Tech Services. AI projects, international hackathons, and digital accompaniment for local entrepreneurs."
+    }
+  },
+  "hero": {
+    "eyebrow_fr": "Cotonou, Bénin · Disponible pour stages & missions",
+    "eyebrow_en": "Cotonou, Benin · Open to internships & freelance work",
+    "subtitle_fr": "Je construis des produits numériques — du code à l'interface — et j'aide des entrepreneurs béninois à exister en ligne.",
+    "subtitle_en": "I build digital products — from code to interface — and help Beninese entrepreneurs show up online.",
+    "description_fr": "Développeur web/mobile et designer UX/UI autodidacte. Fondateur de Tsk's Tech Services. Je livre des projets réels pour des clients réels, je construis des agents IA dans des hackathons internationaux, et je fais tourner un programme d'accompagnement digital gratuit pour des artisans et commerçants au Bénin.",
+    "description_en": "Self-taught web/mobile developer and UX/UI designer. Founder of Tsk's Tech Services. I ship real projects for real clients, build AI agents in international hackathons, and run a free digital accompaniment program for local artisans and merchants in Benin."
+  },
+  "about_fr": "Je suis développeur et designer autodidacte, basé à Cotonou. J'ai fondé Tsk's Tech Services à 19 ans pour rendre la technologie accessible aux entrepreneurs et artisans francophones — pas comme un slogan, mais comme un programme concret : Tsk Tremplin accompagne aujourd'hui plusieurs bénéficiaires du diagnostic jusqu'au lancement digital de leur activité.\\n\\nEn parallèle, je me forme en Licence 1 Génie Logiciel à l'Université d'Abomey-Calavi, et je construis des agents IA lors de hackathons internationaux — avec des projets soumis et des certificats à l'appui, pas juste des intentions. Je donne aussi des cours de français à des adultes en alphabétisation à Zè, dans le cadre d'un programme d'ONG.\\n\\nMon approche : apprendre vite, livrer du concret, et ne jamais confondre une bonne idée avec un produit fini.",
+  "about_en": "I'm a self-taught developer and designer based in Cotonou. I founded Tsk's Tech Services at 19 to make technology accessible to Francophone entrepreneurs and artisans — not as a tagline, but as an actual program: Tsk Tremplin currently supports several beneficiaries from initial diagnosis through their digital launch.\\n\\nAlongside that, I'm studying Software Engineering (Licence 1) at the University of Abomey-Calavi, and I build AI agents in international hackathons — with submitted projects and certificates to show for it, not just intentions. I also teach French literacy classes to adult learners in Zè, as part of an NGO program.\\n\\nMy approach: learn fast, ship something real, and never mistake a good idea for a finished product.",
+  "design_intro_fr": "Le code n'est qu'une partie du travail — chaque projet ci-dessus a aussi nécessité de concevoir l'interface et l'expérience utilisateur, du premier wireframe à l'écran final.",
+  "design_intro_en": "Code is only part of the job — every project above also required designing the interface and user experience, from the first wireframe to the final screen.",
+  "skills": [
+    {
+      "group_fr": "Développement",
+      "group_en": "Development",
+      "items": [
+        {
+          "name_fr": "React, Vite, TypeScript",
+          "name_en": "React, Vite, TypeScript",
+          "level_fr": "Autonome",
+          "level_en": "Proficient"
+        },
+        {
+          "name_fr": "JavaScript, HTML, CSS",
+          "name_en": "JavaScript, HTML, CSS",
+          "level_fr": "Autonome",
+          "level_en": "Proficient"
+        },
+        {
+          "name_fr": "Supabase (bases de données)",
+          "name_en": "Supabase (databases)",
+          "level_fr": "Confirmé",
+          "level_en": "Working knowledge"
+        },
+        {
+          "name_fr": "Git / GitHub",
+          "name_en": "Git / GitHub",
+          "level_fr": "Autonome",
+          "level_en": "Proficient"
+        },
+        {
+          "name_fr": "Agents IA & automatisation (API Claude, n8n)",
+          "name_en": "AI agents & automation (Claude API, n8n)",
+          "level_fr": "Confirmé",
+          "level_en": "Working knowledge"
+        }
+      ]
+    },
+    {
+      "group_fr": "Design",
+      "group_en": "Design",
+      "items": [
+        {
+          "name_fr": "UX/UI Design, maquettage Figma",
+          "name_en": "UX/UI Design, Figma prototyping",
+          "level_fr": "Autonome",
+          "level_en": "Proficient"
+        },
+        {
+          "name_fr": "Identité visuelle & design graphique (Photoshop, Illustrator)",
+          "name_en": "Brand identity & graphic design (Photoshop, Illustrator)",
+          "level_fr": "Autonome",
+          "level_en": "Proficient"
+        }
+      ]
+    },
+    {
+      "group_fr": "Autres",
+      "group_en": "Other",
+      "items": [
+        {
+          "name_fr": "Marketing digital & réseaux sociaux",
+          "name_en": "Digital marketing & social media",
+          "level_fr": "Confirmé",
+          "level_en": "Working knowledge"
+        },
+        {
+          "name_fr": "Gestion de projets & relation client",
+          "name_en": "Project management & client relations",
+          "level_fr": "Autonome (fondateur d'entreprise)",
+          "level_en": "Proficient (company founder)"
+        },
+        {
+          "name_fr": "Vente, négociation, closing",
+          "name_en": "Sales, negotiation, closing",
+          "level_fr": "Confirmé",
+          "level_en": "Working knowledge"
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name_fr": "Français",
+      "name_en": "French",
+      "level_fr": "Langue maternelle",
+      "level_en": "Native"
+    },
+    {
+      "name_fr": "Anglais",
+      "name_en": "English",
+      "level_fr": "Intermédiaire",
+      "level_en": "Intermediate"
+    },
+    {
+      "name_fr": "Fon/Ewé",
+      "name_en": "Fon/Ewe",
+      "level_fr": "Langue locale",
+      "level_en": "Local language"
+    },
+    {
+      "name_fr": "Allemand",
+      "name_en": "German",
+      "level_fr": "Notions de base",
+      "level_en": "Basic"
+    }
+  ],
+  "contact": {
+    "intro_fr": "Une idée, une collaboration ou une mission à construire ? Écris-moi et parlons concret.",
+    "intro_en": "An idea, collaboration, or project to build? Get in touch and let's talk specifics.",
+    "email": "adidomahukpeou@gmail.com",
+    "phone": "+229 01 60 34 52 65",
+    "location_fr": "Godomey · Calavi · Bénin",
+    "location_en": "Godomey · Calavi · Benin",
+    "github": "https://github.com/FlashTsk17",
+    "linkedin": "https://www.linkedin.com/in/tsadok-adido",
+    "instagram": "",
+    "discord": ""
+  }
+}
