@@ -1,0 +1,230 @@
+backend:
+  name: github
+  repo: FlashTsk17/Tsk-s-PortFolio
+  branch: main
+  base_url: https://YOUR-CLOUDFLARE-WORKER.workers.dev
+  auth_endpoint: auth
+media_folder: "assets/img"
+public_folder: "/assets/img"
+site_url: https://flashtsk17.github.io/Tsk-s-PortFolio
+display_url: https://flashtsk17.github.io/Tsk-s-PortFolio
+locale: fr
+publish_mode: editorial_workflow
+collections:
+  - name: "profile"
+    label: "Profil & paramètres"
+    files:
+      - name: "profile"
+        label: "Profil, compétences, langues et contact"
+        file: "data/profile.json"
+        fields:
+          - label: "Métadonnées SEO"
+            name: "meta"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "object", fields: [{label: "Titre", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"}]}
+              - {label: "English", name: "en", widget: "object", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"}]}
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Accroche FR", name: "eyebrow_fr", widget: "string"}
+              - {label: "Eyebrow EN", name: "eyebrow_en", widget: "string"}
+              - {label: "Sous-titre FR", name: "subtitle_fr", widget: "text"}
+              - {label: "Subtitle EN", name: "subtitle_en", widget: "text"}
+              - {label: "Paragraphe FR", name: "description_fr", widget: "text"}
+              - {label: "Paragraph EN", name: "description_en", widget: "text"}
+          - {label: "À propos FR", name: "about_fr", widget: "text"}
+          - {label: "About EN", name: "about_en", widget: "text"}
+          - {label: "Introduction Design FR", name: "design_intro_fr", widget: "text"}
+          - {label: "Design introduction EN", name: "design_intro_en", widget: "text"}
+          - label: "Compétences"
+            name: "skills"
+            widget: "list"
+            fields:
+              - {label: "Groupe FR", name: "group_fr", widget: "string"}
+              - {label: "Group EN", name: "group_en", widget: "string"}
+              - label: "Compétences du groupe"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Nom FR", name: "name_fr", widget: "string"}
+                  - {label: "Name EN", name: "name_en", widget: "string"}
+                  - {label: "Niveau FR", name: "level_fr", widget: "string"}
+                  - {label: "Level EN", name: "level_en", widget: "string"}
+          - label: "Langues"
+            name: "languages"
+            widget: "list"
+            fields:
+              - {label: "Nom FR", name: "name_fr", widget: "string"}
+              - {label: "Name EN", name: "name_en", widget: "string"}
+              - {label: "Niveau FR", name: "level_fr", widget: "string"}
+              - {label: "Level EN", name: "level_en", widget: "string"}
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Introduction FR", name: "intro_fr", widget: "text"}
+              - {label: "Introduction EN", name: "intro_en", widget: "text"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Téléphone", name: "phone", widget: "string"}
+              - {label: "Localisation FR", name: "location_fr", widget: "string"}
+              - {label: "Location EN", name: "location_en", widget: "string"}
+              - {label: "GitHub", name: "github", widget: "string", required: false}
+              - {label: "LinkedIn", name: "linkedin", widget: "string", required: false}
+              - {label: "Instagram (laisser vide si absent)", name: "instagram", widget: "string", required: false}
+              - {label: "Discord (laisser vide si absent)", name: "discord", widget: "string", required: false}
+  - name: "experience"
+    label: "Expérience professionnelle"
+    files:
+      - name: "experience"
+        label: "Expériences"
+        file: "data/experience.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_fr}} — {{fields.organization}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre FR", name: "title_fr", widget: "string"}
+              - {label: "Title EN", name: "title_en", widget: "string"}
+              - {label: "Organisation", name: "organization", widget: "string"}
+              - {label: "Lieu FR", name: "location_fr", widget: "string"}
+              - {label: "Location EN", name: "location_en", widget: "string"}
+              - {label: "Date de début", name: "start_date", widget: "string"}
+              - {label: "Date de fin (vide = poste actuel)", name: "end_date", widget: "string", required: false}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+  - name: "education"
+    label: "Formations"
+    files:
+      - name: "education"
+        label: "Formations"
+        file: "data/education.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_fr}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre FR", name: "title_fr", widget: "string"}
+              - {label: "Title EN", name: "title_en", widget: "string"}
+              - {label: "Établissement", name: "institution", widget: "string"}
+              - {label: "Lieu", name: "location", widget: "string"}
+              - {label: "Période FR", name: "period_fr", widget: "string"}
+              - {label: "Period EN", name: "period_en", widget: "string"}
+              - {label: "Statut", name: "status", widget: "select", options: ["en_cours", "termine"]}
+  - name: "certifications"
+    label: "Certifications"
+    files:
+      - name: "certifications"
+        label: "Certifications"
+        file: "data/certifications.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title_fr}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Titre FR", name: "title_fr", widget: "string"}
+              - {label: "Title EN", name: "title_en", widget: "string"}
+              - {label: "Organisme", name: "issuer", widget: "string"}
+              - {label: "Année", name: "year", widget: "number"}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+              - {label: "Statut", name: "status", widget: "select", options: ["obtenu", "en_cours"]}
+  - name: "hackathons"
+    label: "Hackathons IA"
+    files:
+      - name: "hackathons"
+        label: "Hackathons"
+        file: "data/hackathons.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Date", name: "date", widget: "string"}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+              - {label: "Statut", name: "status", widget: "select", options: ["soumis", "en_cours", "à_venir"]}
+              - {label: "Dépôt", name: "repo_url", widget: "string", required: false}
+              - {label: "Démo", name: "demo_url", widget: "string", required: false}
+              - {label: "Certificat obtenu", name: "certificate", widget: "boolean", default: false}
+  - name: "projects"
+    label: "Projets"
+    files:
+      - name: "projects"
+        label: "Projets"
+        file: "data/projects.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+              - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}, required: false}
+              - {label: "Dépôt", name: "repo_url", widget: "string", required: false}
+              - {label: "Démo", name: "demo_url", widget: "string", required: false}
+              - {label: "Statut", name: "status", widget: "select", options: ["termine", "en_developpement", "en_refonte"]}
+              - {label: "Mis en avant", name: "featured", widget: "boolean", default: false}
+              - {label: "Marque visuelle (initiales)", name: "mark", widget: "string", required: false}
+  - name: "impact"
+    label: "Tsk Tremplin — bénéficiaires"
+    files:
+      - name: "impact"
+        label: "Programme & parcours"
+        file: "data/impact.json"
+        fields:
+          - {label: "Introduction FR", name: "intro_fr", widget: "text"}
+          - {label: "Introduction EN", name: "intro_en", widget: "text"}
+          - label: "Bénéficiaires"
+            name: "beneficiaries"
+            widget: "list"
+            summary: "{{fields.brand}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Marque", name: "brand", widget: "string"}
+              - {label: "Activité / lieu", name: "category", widget: "string", required: false}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+              - {label: "Site", name: "site", widget: "string", required: false}
+              - {label: "Dépôt", name: "repo_url", widget: "string", required: false}
+              - {label: "Image (à venir)", name: "image", widget: "image", required: false}
+  - name: "initiatives"
+    label: "Initiatives & vision"
+    files:
+      - name: "initiatives"
+        label: "Initiatives"
+        file: "data/initiatives.json"
+        fields:
+          - label: "Entrées"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Nom", name: "name", widget: "string"}
+              - {label: "Description FR", name: "description_fr", widget: "text"}
+              - {label: "Description EN", name: "description_en", widget: "text"}
+  - name: "interface"
+    label: "Libellés de l’interface"
+    files:
+      - name: "i18n"
+        label: "Traductions FR / EN"
+        file: "data/i18n.json"
+        fields:
+          - label: "Traductions"
+            name: "translations"
+            widget: "object"
+            hint: "Les clés sont définies par le site. Pour modifier les traductions, ouvrir chaque clé dans l’objet."
