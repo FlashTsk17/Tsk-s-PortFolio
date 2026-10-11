@@ -198,5 +198,13 @@
   "contact.location": {
     "fr": "Localisation",
     "en": "Location"
+  },
+  "project.focus.design": {
+    "fr": "UI/UX Design",
+    "en": "UI/UX Design"
+  },
+  "project.focus.development": {
+    "fr": "Développement",
+    "en": "Development"
   }
 }
