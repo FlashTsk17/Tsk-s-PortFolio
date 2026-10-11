@@ -1,76 +1,32 @@
-# Tsadok ADIDO — Portfolio
+# Portfolio — Tsadok Adido
 
-**Dev · Infographie · UX/UI · Fondateur de Tsk's Tech Services**
+Portfolio statique bilingue FR/EN, HTML/CSS/JavaScript vanilla, hébergé sur GitHub Pages.
 
----
+## Structure
+- `index.html` : structure sémantique des sections.
+- `assets/css/styles.css` : design system « Atelier Bénin × Constructeur », thèmes clair/sombre et responsive.
+- `assets/js/main.js` : rendu depuis les JSON, langue et thème persistants.
+- `data/*.json` : contenu éditorial bilingue.
+- `admin/` : interface Decap CMS et schéma des collections.
+- `assets/cv/` : CV français et anglais attendus.
+- `assets/img/` : médias et captures d’interface à venir.
 
-## 🚀 Déploiement sur GitHub Pages — 5 minutes
+## Développement local
+Les données sont chargées avec `fetch()`; il faut servir le dossier via un serveur HTTP local (pas ouvrir `index.html` en `file://`). Par exemple : `python -m http.server 8000`, puis ouvrir `http://localhost:8000`.
 
-### Structure du repo
-```
-tsadok-portfolio/        ← nom suggéré pour le repo
-├── index.html           ← fichier principal
-└── tsadok.jpg           ← ta photo (déjà en place)
-```
+## Déploiement
+Le site est destiné à GitHub Pages depuis la branche `main`. Après revue de la branche de refonte, fusionner les changements vers `main`. Les chemins sont relatifs pour fonctionner sous le sous-chemin du dépôt GitHub Pages.
 
-### Étapes
+## Decap CMS — authentification à finaliser
+GitHub Pages ne fournit pas de callback OAuth. La configuration CMS attend un proxy OAuth externe et gratuit, par exemple un Cloudflare Worker. Le champ `backend.base_url` dans `admin/config.yml` est volontairement un repère de configuration et doit être remplacé par l’URL réelle du Worker avant d’utiliser l’admin.
 
-**1. Crée le repo GitHub**
-- Va sur github.com → New repository
-- Nom : `tsadok-portfolio` (ou `FlashTsk17.github.io` pour URL courte)
-- Visibilité : Public
-- Ne coche rien d'autre → Create repository
+1. Créer une GitHub OAuth App dans les paramètres développeur GitHub.
+2. Déployer un proxy OAuth Decap compatible sur Cloudflare Workers et y configurer le Client ID et le Client Secret comme secrets (ne jamais les committer dans ce dépôt).
+3. Définir l’URL de callback de l’OAuth App selon la documentation du proxy.
+4. Remplacer `https://YOUR-CLOUDFLARE-WORKER.workers.dev` par l’URL réelle dans `admin/config.yml`.
+5. Déployer le site sur `main`, puis tester `/admin/` en production avec un compte ayant les droits d’écriture sur ce dépôt.
 
-**2. Push les fichiers**
-```bash
-git init
-git add .
-git commit -m "🚀 Portfolio initial — Tsadok ADIDO"
-git branch -M main
-git remote add origin https://github.com/FlashTsk17/tsadok-portfolio.git
-git push -u origin main
-```
+La documentation officielle Decap décrit le flux proxy OAuth : https://decapcms.org/docs/backends-overview/. Un exemple de Worker communautaire est disponible ici : https://github.com/sterlingwes/decap-proxy.
 
-**3. Active GitHub Pages**
-- Dans ton repo → Settings → Pages
-- Source : `Deploy from a branch`
-- Branch : `main` / `/ (root)`
-- Save
-
-**4. Ton portfolio est live !**
-URL : `https://flashtsk17.github.io/tsadok-portfolio`
-
----
-
-## 🔗 Liens à compléter dans index.html
-
-Recherche `REMPLACE` dans index.html pour trouver les 3 endroits à compléter :
-
-| Élément | Action |
-|---|---|
-| `Formspree` | Va sur formspree.io → New form → copie l'ID |
-| `Mon CV` (nav) | Lien Google Drive de ton CV PDF |
-| `LinkedIn` | Ton URL LinkedIn |
-| `Instagram` | Ton URL Instagram |
-| Liens GitHub projets | URLs de tes repos publics |
-
----
-
-## 📸 Photo
-Ta photo `tsadok.jpg` est déjà branchée. ✅
-
----
-
-## 📬 Formspree — Brancher le formulaire
-
-1. Va sur [formspree.io](https://formspree.io)
-2. Crée un compte gratuit
-3. New Form → donne un nom (ex: "Portfolio Contact")
-4. Copie l'endpoint : `https://formspree.io/f/xxxxxxxx`
-5. Dans `index.html`, cherche `REMPLACE_PAR_TON_ID` et remplace par ton ID
-
-Le formulaire enverra les messages directement sur `adidomahukpeou@gmail.com`.
-
----
-
-*Tsk's Tech Services · Cotonou, Bénin · 2026*
+## Assets attendus
+Les PDF `CV_Tsadok_Adido_FR.pdf` et `CV_Tsadok_Adido_EN.pdf` doivent être placés dans `assets/cv/`. Le bouton CV reste masqué tant que le PDF correspondant à la langue active n’existe pas. Les liens Instagram/Discord et les captures UX restent absents tant que les vraies informations ne sont pas fournies.

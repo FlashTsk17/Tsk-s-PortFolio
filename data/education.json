@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "id": "uac-software-engineering",
+      "title_fr": "Licence 1, Génie Logiciel / Développement",
+      "title_en": "First-year Bachelor's, Software Engineering / Development",
+      "institution": "Université d'Abomey-Calavi (UAC)",
+      "location": "Bénin",
+      "period_fr": "En cours",
+      "period_en": "In progress",
+      "status": "en_cours"
+    },
+    {
+      "id": "bac-d",
+      "title_fr": "Baccalauréat Scientifique (Série D, Biologie-Géologie)",
+      "title_en": "Scientific Baccalaureate (Series D, Biology & Geology)",
+      "institution": "CEG Godomey",
+      "location": "Bénin",
+      "period_fr": "2026",
+      "period_en": "2026",
+      "status": "termine"
+    },
+    {
+      "id": "cjle-it",
+      "title_fr": "Informatique & Maîtrise de l'outil",
+      "title_en": "IT & Computer Literacy",
+      "institution": "CJLE",
+      "location": "Bénin",
+      "period_fr": "2024",
+      "period_en": "2024",
+      "status": "termine"
+    },
+    {
+      "id": "ccom-infographie",
+      "title_fr": "Diplôme d'Infographie",
+      "title_en": "Graphic Design Diploma",
+      "institution": "C'com",
+      "location": "Bénin",
+      "period_fr": "2022",
+      "period_en": "2022",
+      "status": "termine"
+    }
+  ]
+}

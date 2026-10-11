@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "id": "ai-fluency-anthropic",
+      "title_fr": "AI Fluency: Framework & Foundations",
+      "title_en": "AI Fluency: Framework & Foundations",
+      "issuer": "Anthropic Academy",
+      "year": 2026,
+      "description_fr": "Certification sur les fondamentaux de l'usage professionnel des modèles de langage.",
+      "description_en": "Certification on the fundamentals of professional large language model use.",
+      "status": "obtenu"
+    }
+  ]
+}

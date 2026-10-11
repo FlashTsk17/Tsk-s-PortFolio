@@ -1,0 +1,149 @@
+{
+  "items": [
+    {
+      "id": "diagnocommerce",
+      "name": "DiagnoCommerce",
+      "description_fr": "Conçu et développé en solo en 48 h : de la réflexion UI/UX et la conception de l'interface au développement front-end et à l'intégration des services. React, TypeScript, Supabase et Claude via API.",
+      "description_en": "Designed and built solo in 48 hours, from UI/UX thinking and interface design to front-end development and service integration. React, TypeScript, Supabase and Claude via API.",
+      "tags": [
+        "UI/UX Design",
+        "Front-end",
+        "React",
+        "TypeScript",
+        "Supabase",
+        "Claude API"
+      ],
+      "repo_url": "https://github.com/FlashTsk17/DiagnoCommerce",
+      "demo_url": "https://624mlfjl2738h82w76vjkw0q4.nativelyai.app/",
+      "status": "termine",
+      "featured": true,
+      "mark": "DC",
+      "image_desktop": "assets/img/diagnocommerce-desktop.png",
+      "image_mobile": "assets/img/diagnocommerce-mobile.png",
+      "focus": {
+        "uiux_fr": "Conception de l’interface et parcours de diagnostic pour petits commerçants.",
+        "uiux_en": "Interface design and diagnostic flow for small merchants.",
+        "dev_fr": "Application développée en 48 h avec React, TypeScript, Supabase et l’API Claude.",
+        "dev_en": "Application built in 48 hours with React, TypeScript, Supabase and the Claude API."
+      }
+    },
+    {
+      "id": "celebrationslink",
+      "name": "CelebrationsLink",
+      "description_fr": "Plateforme qui transforme une célébration en expérience digitale personnalisée, interactive et partageable via un simple lien. Architecture en cours de refonte pour séparer UI, logique métier, données et partage, et la rendre générique et extensible à de nouveaux types de célébrations (au-delà des premiers formats BirthdayLink et MothersLink).",
+      "description_en": "A platform that turns a celebration into a personalized, interactive digital experience shareable through a single link. Architecture currently being redesigned to separate UI, business logic, data and sharing layers, making it generic and extensible to new celebration types (beyond the initial BirthdayLink and MothersLink formats).",
+      "tags": [
+        "React",
+        "Vite"
+      ],
+      "repo_url": "https://github.com/FlashTsk17/CelebrationsLink",
+      "demo_url": "https://celebrations-link.vercel.app/",
+      "status": "en_developpement",
+      "featured": true,
+      "mark": "CL",
+      "image_desktop": "assets/img/CelebrationsLink-desktop.png",
+      "image_mobile": "assets/img/CelebrationsLink-mobile.png",
+      "focus": {
+        "uiux_fr": "Conception de l’expérience de célébration : structure de l’interface, parcours utilisateur et adaptation aux écrans ordinateur et mobile.",
+        "uiux_en": "Celebration experience design: interface structure, user journey, and adaptation to desktop and mobile screens.",
+        "dev_fr": "Plateforme React/Vite en évolution. Des réglages internes restent en cours avant de considérer l’expérience comme pleinement stabilisée.",
+        "dev_en": "Evolving React/Vite platform. Internal configuration is still in progress before the experience can be considered fully stabilized."
+      }
+    },
+    {
+      "id": "africa-bibliotech",
+      "name": "Africa BiblioTech",
+      "description_fr": "Bibliothèque numérique pensée pour démocratiser l'accès aux ressources académiques en Afrique de l'Ouest : livres, cours et outils pédagogiques gratuits pour élèves, étudiants et autodidactes.",
+      "description_en": "A digital library built to democratize access to academic resources in West Africa: free books, courses and learning tools for students and self-learners.",
+      "tags": [
+        "Node.js",
+        "MongoDB",
+        "JWT"
+      ],
+      "repo_url": "",
+      "demo_url": "",
+      "status": "en_developpement",
+      "featured": true,
+      "mark": "AB"
+    },
+    {
+      "id": "tsk-personalab",
+      "name": "Tsk PersonaLab",
+      "description_fr": "Application web interactive de test de personnalité, en cours de refonte complète sous un nouveau nom. Bientôt disponible.",
+      "description_en": "Interactive personality-test web app, currently undergoing a full rebuild under a new name. Coming soon.",
+      "tags": [],
+      "repo_url": "",
+      "demo_url": "",
+      "status": "en_refonte",
+      "featured": false,
+      "mark": "PL"
+    },
+    {
+      "id": "elegance-by-andi",
+      "name": "Elegance by Andi",
+      "description_fr": "Projet conçu et développé en solo : conception UI/UX, création de l'interface et développement front-end responsive, avec une attention portée à la cohérence visuelle et à l'expérience sur ordinateur comme sur mobile.",
+      "description_en": "Independently designed and developed: UI/UX design, interface creation and responsive front-end development, with attention to visual consistency and the experience across desktop and mobile.",
+      "tags": [
+        "UI/UX Design",
+        "Front-end",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "EA",
+      "image_desktop": "assets/img/elegance-by-andi-desktop.png",
+      "image_mobile": "assets/img/elegance-by-andi-mobile.png",
+      "focus": {
+        "uiux_fr": "Hiérarchie visuelle, cohérence de l’interface et expérience multi-écrans.",
+        "uiux_en": "Visual hierarchy, interface consistency and cross-screen experience.",
+        "dev_fr": "Intégration front-end responsive, pensée pour ordinateur et mobile.",
+        "dev_en": "Responsive front-end implementation for desktop and mobile."
+      }
+    },
+    {
+      "id": "maison-ph",
+      "name": "Maison PH",
+      "description_fr": "Projet conçu et développé en solo, du travail UI/UX à l'intégration front-end responsive. L'objectif : proposer une interface cohérente avec l'identité du projet et une expérience adaptée aux écrans ordinateur et mobile.",
+      "description_en": "Independently designed and developed, from UI/UX work to responsive front-end implementation. The goal: an interface aligned with the project's identity and an experience adapted to desktop and mobile screens.",
+      "tags": [
+        "UI/UX Design",
+        "Front-end",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "PH",
+      "image_desktop": "assets/img/maison-ph-desktop.png",
+      "image_mobile": "assets/img/maison-ph-mobile.png",
+      "focus": {
+        "uiux_fr": "Interface organisée autour de l’identité et des besoins du projet.",
+        "uiux_en": "Interface shaped around the project's identity and needs.",
+        "dev_fr": "Développement front-end et adaptation de l’affichage aux écrans.",
+        "dev_en": "Front-end development and layout adaptation across screen sizes."
+      }
+    },
+    {
+      "id": "juliette-cosmetics-shop",
+      "name": "Juliette's Cosmetics Shop",
+      "description_fr": "Projet de boutique en ligne conçu et développé en solo : réflexion UI/UX, conception de l'interface et développement front-end responsive, en mettant l'accent sur la présentation des produits et le confort de navigation.",
+      "description_en": "An online shop project independently designed and developed: UI/UX thinking, interface design and responsive front-end development, with a focus on product presentation and easy navigation.",
+      "tags": [
+        "UI/UX Design",
+        "Front-end",
+        "E-commerce",
+        "Responsive"
+      ],
+      "status": "termine",
+      "featured": false,
+      "mark": "JC",
+      "image_desktop": "assets/img/juliette-cosmetics-desktop.png",
+      "image_mobile": "assets/img/juliette-cosmetics-mobile.png",
+      "focus": {
+        "uiux_fr": "Mise en valeur des produits et navigation claire pour une boutique beauté.",
+        "uiux_en": "Product presentation and clear navigation for a beauty shop.",
+        "dev_fr": "Interface de boutique en ligne intégrée en front-end responsive.",
+        "dev_en": "Online shop interface implemented with responsive front-end development."
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "intro_fr": "Tsk Tremplin est mon programme d'accompagnement digital gratuit pour des artisans et commerçants béninois sélectionnés — 6 mois, du diagnostic au lancement en ligne. Ce n'est pas juste une idée : voici deux parcours concrets menés à travers ce programme.",
+  "intro_en": "Tsk Tremplin is my free digital accompaniment program for selected Beninese artisans and merchants — six months, from diagnosis to online launch. This is more than an idea: here are concrete journeys completed through the program.",
+  "beneficiaries": [
+    {
+      "id": "elegance-by-andi",
+      "brand": "Elegance by Andi",
+      "category": "Maroquinerie & tricot artisanal · Abomey-Calavi",
+      "description_fr": "Identité de marque complète puis site vitrine, pour une créatrice de tricot artisanal haut de gamme.",
+      "description_en": "Full brand identity followed by a showcase website, for a handmade knitwear artisan.",
+      "site": "https://elegance-by-andi.netlify.app/",
+      "repo_url": "https://github.com/FlashTsk17/Elegance-by-andi",
+      "image": ""
+    },
+    {
+      "id": "maison-ph",
+      "brand": "Maison PH",
+      "category": "Mode haut de gamme · Pierre Houngbo",
+      "description_fr": "Identité de marque (monogramme, charte graphique) puis site vitrine, pour une marque de mode haut de gamme.",
+      "description_en": "Brand identity (monogram, visual guidelines) followed by a showcase website, for a high-end fashion brand.",
+      "site": "https://flashtsk17.github.io/maison-ph-site/",
+      "repo_url": "https://github.com/FlashTsk17/Maison-ph",
+      "image": ""
+    },
+    {
+      "id": "juliettes-cosmetics",
+      "brand": "Juliette's Cosmetics",
+      "category": "Vente de cosmétiques",
+      "description_fr": "Site vitrine e-commerce ayant inspiré la création du programme Tsk Tremplin.",
+      "description_en": "E-commerce showcase site that inspired the creation of the Tsk Tremplin program.",
+      "site": "https://juliette-s-cosmetics-shop.vercel.app/",
+      "repo_url": "",
+      "image": ""
+    }
+  ]
+}
