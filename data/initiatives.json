@@ -1,14 +1,16 @@
-[
-  {
-    "id": "education-afrique-tech",
-    "name": "Éducation en Afrique par la Tech",
-    "description_fr": "Vision long terme : une plateforme éducative interactive pour transformer l'accès à l'enseignement via le numérique — formation des enseignants, ressources pour élèves, déploiement régional.",
-    "description_en": "Long-term vision: an interactive educational platform to transform access to education through digital tools — teacher training, student resources, regional deployment."
-  },
-  {
-    "id": "tech-for-all",
-    "name": "TECH FOR ALL",
-    "description_fr": "Vision long terme : rendre la technologie accessible à tous — jeunes, communautés locales, sans barrières — via formation, accompagnement et ressources digitales.",
-    "description_en": "Long-term vision: making technology accessible to everyone — young people, local communities, without barriers — through training, support and digital resources."
-  }
-]
+{
+  "items": [
+    {
+      "id": "education-afrique-tech",
+      "name": "Éducation en Afrique par la Tech",
+      "description_fr": "Vision long terme : une plateforme éducative interactive pour transformer l'accès à l'enseignement via le numérique — formation des enseignants, ressources pour élèves, déploiement régional.",
+      "description_en": "Long-term vision: an interactive educational platform to transform access to education through digital tools — teacher training, student resources, regional deployment."
+    },
+    {
+      "id": "tech-for-all",
+      "name": "TECH FOR ALL",
+      "description_fr": "Vision long terme : rendre la technologie accessible à tous — jeunes, communautés locales, sans barrières — via formation, accompagnement et ressources digitales.",
+      "description_en": "Long-term vision: making technology accessible to everyone — young people, local communities, without barriers — through training, support and digital resources."
+    }
+  ]
+}
