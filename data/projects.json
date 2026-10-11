@@ -65,10 +65,11 @@
     {
       "id": "elegance-by-andi",
       "name": "Elegance by Andi",
-      "description_fr": "Présentation d'une réalisation web dédiée à Elegance by Andi, avec aperçu sur ordinateur et mobile.",
-      "description_en": "A web project showcase for Elegance by Andi, with desktop and mobile previews.",
+      "description_fr": "Projet conçu et développé en solo : conception UI/UX, création de l'interface et développement front-end responsive, avec une attention portée à la cohérence visuelle et à l'expérience sur ordinateur comme sur mobile.",
+      "description_en": "Independently designed and developed: UI/UX design, interface creation and responsive front-end development, with attention to visual consistency and the experience across desktop and mobile.",
       "tags": [
-        "Web design",
+        "UI/UX Design",
+        "Front-end",
         "Responsive"
       ],
       "status": "termine",
@@ -80,10 +81,11 @@
     {
       "id": "maison-ph",
       "name": "Maison PH",
-      "description_fr": "Présentation d'une réalisation web pour Maison PH, avec aperçu sur ordinateur et mobile.",
-      "description_en": "A web project showcase for Maison PH, with desktop and mobile previews.",
+      "description_fr": "Projet conçu et développé en solo, du travail UI/UX à l'intégration front-end responsive. L'objectif : proposer une interface cohérente avec l'identité du projet et une expérience adaptée aux écrans ordinateur et mobile.",
+      "description_en": "Independently designed and developed, from UI/UX work to responsive front-end implementation. The goal: an interface aligned with the project's identity and an experience adapted to desktop and mobile screens.",
       "tags": [
-        "Web design",
+        "UI/UX Design",
+        "Front-end",
         "Responsive"
       ],
       "status": "termine",
@@ -95,9 +97,11 @@
     {
       "id": "juliette-cosmetics-shop",
       "name": "Juliette's Cosmetics Shop",
-      "description_fr": "Présentation d'une réalisation web pour Juliette's Cosmetics Shop, avec aperçu sur ordinateur et mobile.",
-      "description_en": "A web project showcase for Juliette's Cosmetics Shop, with desktop and mobile previews.",
+      "description_fr": "Projet de boutique en ligne conçu et développé en solo : réflexion UI/UX, conception de l'interface et développement front-end responsive, en mettant l'accent sur la présentation des produits et le confort de navigation.",
+      "description_en": "An online shop project independently designed and developed: UI/UX thinking, interface design and responsive front-end development, with a focus on product presentation and easy navigation.",
       "tags": [
+        "UI/UX Design",
+        "Front-end",
         "E-commerce",
         "Responsive"
       ],
