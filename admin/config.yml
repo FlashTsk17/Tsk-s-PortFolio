@@ -224,7 +224,303 @@ collections:
         label: "Traductions FR / EN"
         file: "data/i18n.json"
         fields:
-          - label: "Traductions"
-            name: "translations"
+          - label: "nav.profile"
+            name: "nav.profile"
             widget: "object"
-            hint: "Les clés sont définies par le site. Pour modifier les traductions, ouvrir chaque clé dans l’objet."
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.skills"
+            name: "nav.skills"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.experience"
+            name: "nav.experience"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.proof"
+            name: "nav.proof"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.projects"
+            name: "nav.projects"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.impact"
+            name: "nav.impact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.contact"
+            name: "nav.contact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "nav.cv"
+            name: "nav.cv"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "hero.projects"
+            name: "hero.projects"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "hero.contact"
+            name: "hero.contact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "hero.caption"
+            name: "hero.caption"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.profile"
+            name: "section.profile"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.skills"
+            name: "section.skills"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.experience"
+            name: "section.experience"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.proof"
+            name: "section.proof"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.projects"
+            name: "section.projects"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.impact"
+            name: "section.impact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.design"
+            name: "section.design"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.initiatives"
+            name: "section.initiatives"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.education"
+            name: "section.education"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.languages"
+            name: "section.languages"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "section.contact"
+            name: "section.contact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.profile"
+            name: "heading.profile"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.skills"
+            name: "heading.skills"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.experience"
+            name: "heading.experience"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.proof"
+            name: "heading.proof"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.certifications"
+            name: "heading.certifications"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.projects"
+            name: "heading.projects"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.design"
+            name: "heading.design"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.initiatives"
+            name: "heading.initiatives"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.education"
+            name: "heading.education"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.languages"
+            name: "heading.languages"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "heading.contact"
+            name: "heading.contact"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "theme.dark"
+            name: "theme.dark"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "theme.light"
+            name: "theme.light"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "date.present"
+            name: "date.present"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.soumis"
+            name: "status.soumis"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.en_cours"
+            name: "status.en_cours"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.à_venir"
+            name: "status.à_venir"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.termine"
+            name: "status.termine"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.en_developpement"
+            name: "status.en_developpement"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.en_refonte"
+            name: "status.en_refonte"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "status.obtenu"
+            name: "status.obtenu"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "link.repository"
+            name: "link.repository"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "link.demo"
+            name: "link.demo"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "link.website"
+            name: "link.website"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "gallery.pending"
+            name: "gallery.pending"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "footer.top"
+            name: "footer.top"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "footer.admin"
+            name: "footer.admin"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
+          - label: "contact.location"
+            name: "contact.location"
+            widget: "object"
+            fields:
+              - {label: "Français", name: "fr", widget: "string"}
+              - {label: "English", name: "en", widget: "string"}
