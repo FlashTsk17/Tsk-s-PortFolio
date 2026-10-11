@@ -19,7 +19,13 @@
       "featured": true,
       "mark": "DC",
       "image_desktop": "assets/img/diagnocommerce-desktop.png",
-      "image_mobile": "assets/img/diagnocommerce-mobile.png"
+      "image_mobile": "assets/img/diagnocommerce-mobile.png",
+      "focus": {
+        "uiux_fr": "Conception de l’interface et parcours de diagnostic pour petits commerçants.",
+        "uiux_en": "Interface design and diagnostic flow for small merchants.",
+        "dev_fr": "Application développée en 48 h avec React, TypeScript, Supabase et l’API Claude.",
+        "dev_en": "Application built in 48 hours with React, TypeScript, Supabase and the Claude API."
+      }
     },
     {
       "id": "celebrationslink",
@@ -78,7 +84,13 @@
       "featured": false,
       "mark": "EA",
       "image_desktop": "assets/img/elegance-by-andi-desktop.png",
-      "image_mobile": "assets/img/elegance-by-andi-mobile.png"
+      "image_mobile": "assets/img/elegance-by-andi-mobile.png",
+      "focus": {
+        "uiux_fr": "Hiérarchie visuelle, cohérence de l’interface et expérience multi-écrans.",
+        "uiux_en": "Visual hierarchy, interface consistency and cross-screen experience.",
+        "dev_fr": "Intégration front-end responsive, pensée pour ordinateur et mobile.",
+        "dev_en": "Responsive front-end implementation for desktop and mobile."
+      }
     },
     {
       "id": "maison-ph",
@@ -94,7 +106,13 @@
       "featured": false,
       "mark": "PH",
       "image_desktop": "assets/img/maison-ph-desktop.png",
-      "image_mobile": "assets/img/maison-ph-mobile.png"
+      "image_mobile": "assets/img/maison-ph-mobile.png",
+      "focus": {
+        "uiux_fr": "Interface organisée autour de l’identité et des besoins du projet.",
+        "uiux_en": "Interface shaped around the project's identity and needs.",
+        "dev_fr": "Développement front-end et adaptation de l’affichage aux écrans.",
+        "dev_en": "Front-end development and layout adaptation across screen sizes."
+      }
     },
     {
       "id": "juliette-cosmetics-shop",
@@ -111,7 +129,13 @@
       "featured": false,
       "mark": "JC",
       "image_desktop": "assets/img/juliette-cosmetics-desktop.png",
-      "image_mobile": "assets/img/juliette-cosmetics-mobile.png"
+      "image_mobile": "assets/img/juliette-cosmetics-mobile.png",
+      "focus": {
+        "uiux_fr": "Mise en valeur des produits et navigation claire pour une boutique beauté.",
+        "uiux_en": "Product presentation and clear navigation for a beauty shop.",
+        "dev_fr": "Interface de boutique en ligne intégrée en front-end responsive.",
+        "dev_en": "Online shop interface implemented with responsive front-end development."
+      }
     }
   ]
 }
